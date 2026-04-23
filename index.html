@@ -1770,8 +1770,21 @@
   <script>
     (function () {
       var scroll = document.getElementById('acScroll');
+      var track = document.getElementById('acTrack');
       var isDown = false, startX, scrollLeft;
 
+      // Infinite loop: jump back/forward when crossing the halfway point
+      function loopScroll() {
+        var half = track.scrollWidth / 2;
+        if (scroll.scrollLeft >= half) {
+          scroll.scrollLeft -= half;
+        } else if (scroll.scrollLeft <= 0) {
+          scroll.scrollLeft += half;
+        }
+      }
+      scroll.addEventListener('scroll', loopScroll);
+
+      // Drag to scroll (mouse)
       scroll.addEventListener('mousedown', function (e) {
         isDown = true;
         scroll.classList.add('dragging');

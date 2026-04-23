@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Nixi – AI Ad Creative Generator | Campaign-Ready Ads in Minutes</title>
+  <meta name="description"
+    content="Upload a product. Nixi generates complete, brand-aware ad creatives for Meta and Instagram. No designer. No prompts. Free to start." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --accent: #F97316;
+      --accent-light: #fff7ed;
+      --accent-mid: #fed7aa;
+      --accent-dark: #9a3412;
+      --text: #212121;
+      --text-2: #666;
+      --text-3: #aaa;
+      --bg: #fff;
+      --bg2: #fafafa;
+      --border: #ebebeb;
+      --r: 18px;
+      --r-lg: 28px
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 62px
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(235, 235, 235, .6)
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: #fff
+    }
+
+    .nav-logo span {
+      font-weight: 750;
+      font-size: 16px;
+      color: var(--text);
+      letter-spacing: -.4px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--text)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .22s;
+      border: none;
+      font-family: inherit
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(249, 115, 22, .35)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249, 115, 22, .45)
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border)
+    }
+
+    .btn-ghost:hover {
+      background: #fafafa
+    }
+
+    .sh {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto
+    }
+
+    .sh-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 50px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-mid);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      margin-bottom: 14px
+    }
+
+    .sh h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 12px
+    }
+
+    .sh p {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.7
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    @keyframes floatB {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(.7)
+      }
+    }
+
+    @keyframes scrollFwd {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 62px);
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(249, 115, 22, .07), transparent);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 50px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-mid);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      margin-bottom: 24px
+    }
+
+    .hero-tag span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse-dot 2s ease infinite
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 32px
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 80px;
+      overflow: visible
+    }
+
+    .hero-phone {
+      width: 100%;
+      max-width: 300px;
+      background: #fff;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .12);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      animation: float 5s ease-in-out infinite
+    }
+
+    .hp-topbar {
+      background: #fafafa;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .hp-dots {
+      display: flex;
+      gap: 5px
+    }
+
+    .hp-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block
+    }
+
+    .hp-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-3);
+      margin-left: 8px
+    }
+
+    .hp-body {
+      padding: 16px
+    }
+
+    .hp-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 14px
+    }
+
+    .hp-input-emoji {
+      font-size: 18px
+    }
+
+    .hp-input-text {
+      font-size: 12px;
+      color: var(--text-2);
+      flex: 1
+    }
+
+    .hp-input-btn {
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit
+    }
+
+    .hp-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 10px
+    }
+
+    .hp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px
+    }
+
+    .hp-ad {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px
+    }
+
+    .hp-ad-1 {
+      background: linear-gradient(160deg, #f5f0eb, #e8ddd0)
+    }
+
+    .hp-ad-2 {
+      background: linear-gradient(160deg, #0d0d20, #1a1a3e)
+    }
+
+    .hp-ad-3 {
+      background: linear-gradient(160deg, #fff5f2, #ffe0d6)
+    }
+
+    .hp-ad-4 {
+      background: linear-gradient(160deg, #0a1628, #1e3a5f)
+    }
+
+    .hp-ad-emoji {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px
+    }
+
+    .hp-ad-tag {
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 4px
+    }
+
+    .t1 .hp-ad-tag {
+      background: #1a1a1a;
+      color: #fff
+    }
+
+    .t2 .hp-ad-tag {
+      background: #F97316;
+      color: #fff
+    }
+
+    .t3 .hp-ad-tag {
+      background: #F97316;
+      color: #fff
+    }
+
+    .t4 .hp-ad-tag {
+      background: #fff;
+      color: #0a1628
+    }
+
+    .hp-ad-line {
+      height: 4px;
+      border-radius: 2px;
+      margin-bottom: 3px;
+      opacity: .7
+    }
+
+    .t1 .hp-ad-line,
+    .t3 .hp-ad-line {
+      background: #212121
+    }
+
+    .t2 .hp-ad-line,
+    .t4 .hp-ad-line {
+      background: #fff
+    }
+
+    .hero-badge {
+      position: absolute;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 9px 14px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .1);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .hb1 {
+      top: 30px;
+      right: 10px;
+      animation: floatB 4s ease-in-out infinite
+    }
+
+    .hb2 {
+      bottom: 70px;
+      left: 10px;
+      animation: floatB 4s ease-in-out .8s infinite
+    }
+
+    .hb3 {
+      top: 45%;
+      right: 0;
+      animation: floatB 4s ease-in-out 1.5s infinite
+    }
+
+    /* CAROUSEL */
+    .adcarousel {
+      padding: 40px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden
+    }
+
+    .ac-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px
+    }
+
+    /* HOW IT WORKS */
+    .hiw {
+      padding: 96px 0
+    }
+
+    .hiw-bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 56px
+    }
+
+    .bento {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s
+    }
+
+    .bento:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .08)
+    }
+
+    .bento-body {
+      padding: 28px
+    }
+
+    .bento-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, .3)
+    }
+
+    .bento h3 {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      margin-bottom: 8px
+    }
+
+    .bento p {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.65
+    }
+
+    .bento-visual {
+      padding: 20px 20px 0
+    }
+
+    .bv-url {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px
+    }
+
+    .bv-url-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      flex-shrink: 0
+    }
+
+    .bv-url-text {
+      font-size: 12px;
+      color: var(--text-2);
+      font-family: monospace
+    }
+
+    .bv-scan {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap
+    }
+
+    .bv-scan span {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+      color: var(--text-3);
+      background: #fff
+    }
+
+    .bv-angles {
+      display: flex;
+      flex-direction: column;
+      gap: 7px
+    }
+
+    .bv-angle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s
+    }
+
+    .bv-angle:hover,
+    .bv-angle.sel {
+      background: var(--accent-light);
+      border-color: var(--accent-mid);
+      color: var(--accent-dark)
+    }
+
+    .bv-angle-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    /* NO PROMPTS */
+    .noprompts {
+      padding: 96px 0;
+      background: #fff;
+      overflow: hidden
+    }
+
+    /* BRAND SENSE */
+    .brandsense {
+      padding: 96px 0;
+      background: var(--bg2)
+    }
+
+    .bs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 56px;
+      align-items: start
+    }
+
+    .bs-card-big {
+      background: linear-gradient(135deg, #fff8f6, #fff2ee);
+      border: 1.5px solid var(--accent-mid);
+      border-radius: var(--r-lg);
+      padding: 36px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .bs-card-big h3 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.6px;
+      margin-bottom: 10px
+    }
+
+    .bs-card-big p {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 24px
+    }
+
+    .bs-small {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 14px;
+      transition: transform .25s, box-shadow .25s
+    }
+
+    .bs-small:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .07)
+    }
+
+    .bs-small-icon {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .bs-small h4 {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      margin-bottom: 4px
+    }
+
+    .bs-small p {
+      font-size: 12px;
+      color: var(--text-2);
+      line-height: 1.55;
+      margin: 0
+    }
+
+    /* DEMO */
+    .demo {
+      padding: 96px 0;
+      background: #fff
+    }
+
+    .demo-shell {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .1);
+      overflow: hidden;
+      max-width: 920px;
+      margin: 0 auto
+    }
+
+    .demo-topbar {
+      padding: 11px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #fafafa
+    }
+
+    .tb-d {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%
+    }
+
+    .tb-url {
+      flex: 1;
+      margin-left: 10px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--text-3);
+      max-width: 280px
+    }
+
+    .demo-body {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 460px
+    }
+
+    .demo-left {
+      padding: 24px;
+      border-right: 1px solid var(--border)
+    }
+
+    .demo-left h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-3);
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      margin-bottom: 14px
+    }
+
+    .inp-block {
+      margin-bottom: 16px
+    }
+
+    .inp-block label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-2);
+      display: block;
+      margin-bottom: 5px
+    }
+
+    .fake-input {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 9px 13px;
+      font-size: 12px;
+      color: var(--text)
+    }
+
+    .prod-box {
+      background: linear-gradient(135deg, #fde8d8, #fcd5c0);
+      border-radius: 10px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px
+    }
+
+    .spills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px
+    }
+
+    .spill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: all .18s
+    }
+
+    .spill.on {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--accent-dark)
+    }
+
+    .gen-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 11px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      box-shadow: 0 4px 16px rgba(249, 115, 22, .35);
+      transition: all .2s
+    }
+
+    .gen-btn:hover {
+      transform: translateY(-1px)
+    }
+
+    .demo-right {
+      padding: 24px;
+      background: var(--bg2)
+    }
+
+    .demo-right-hd {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px
+    }
+
+    .demo-right-hd h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-3);
+      letter-spacing: .5px;
+      text-transform: uppercase
+    }
+
+    .out-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 3px 10px;
+      border-radius: 50px;
+      border: 1px solid var(--accent-mid)
+    }
+
+    .out-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px
+    }
+
+    .out-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .out-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1)
+    }
+
+    .out-prev {
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .o1 {
+      background: linear-gradient(160deg, #f5f0eb, #e8ddd0)
+    }
+
+    .o2 {
+      background: linear-gradient(160deg, #0d0d0d, #222)
+    }
+
+    .o3 {
+      background: linear-gradient(160deg, #fff5f2, #ffe0d6)
+    }
+
+    .out-prod {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      aspect-ratio: 1;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px
+    }
+
+    .o1 .out-prod {
+      background: rgba(255, 255, 255, .6)
+    }
+
+    .o2 .out-prod {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .o3 .out-prod {
+      background: rgba(255, 255, 255, .75)
+    }
+
+    .out-hl {
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.2
+    }
+
+    .o1 .out-hl {
+      color: #1a1a1a
+    }
+
+    .o2 .out-hl {
+      color: #fff
+    }
+
+    .o3 .out-hl {
+      color: #1a1a1a
+    }
+
+    .out-sb {
+      font-size: 8px;
+      margin-top: 2px;
+      line-height: 1.3
+    }
+
+    .o1 .out-sb,
+    .o3 .out-sb {
+      color: rgba(0, 0, 0, .4)
+    }
+
+    .o2 .out-sb {
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .out-ct {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 8px;
+      font-weight: 700
+    }
+
+    .o1 .out-ct {
+      background: #1a1a1a;
+      color: #fff
+    }
+
+    .o2 .out-ct {
+      background: #F97316;
+      color: #fff
+    }
+
+    .o3 .out-ct {
+      background: #F97316;
+      color: #fff
+    }
+
+    .out-ft {
+      padding: 8px 10px;
+      border-top: 1px solid var(--border)
+    }
+
+    .out-angle {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--text-3)
+    }
+
+    .out-angle span {
+      color: var(--accent)
+    }
+
+    /* SOCIAL */
+    .social {
+      padding: 96px 0;
+      background: var(--bg2)
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 56px
+    }
+
+    .tc {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 26px;
+      transition: box-shadow .25s, transform .25s
+    }
+
+    .tc:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .08)
+    }
+
+    .tc-stars {
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 12px
+    }
+
+    .tc blockquote {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 16px
+    }
+
+    .tc-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px
+    }
+
+    .tc-av {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0
+    }
+
+    .av1 {
+      background: linear-gradient(135deg, #F97316, #c2410c)
+    }
+
+    .av2 {
+      background: linear-gradient(135deg, #6366f1, #4f46e5)
+    }
+
+    .av3 {
+      background: linear-gradient(135deg, #10b981, #059669)
+    }
+
+    .tc-name {
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .tc-role {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 1px
+    }
+
+    /* FINAL */
+    .final {
+      padding: 120px 28px;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 0%, #fff8f6 100%)
+    }
+
+    .final h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.08;
+      max-width: 600px;
+      margin: 0 auto 18px
+    }
+
+    .final h2 em {
+      font-style: normal;
+      color: var(--accent)
+    }
+
+    .final p {
+      font-size: 16px;
+      color: var(--text-2);
+      max-width: 420px;
+      margin: 0 auto 32px;
+      line-height: 1.7
+    }
+
+    footer {
+      padding: 36px 28px;
+      border-top: 1px solid var(--border)
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1140px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 14px
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-3);
+      text-decoration: none
+    }
+
+    .footer-links a:hover {
+      color: var(--text)
+    }
+
+    @media(max-width:900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .hero-sub {
+        margin: 0 auto 32px
+      }
+
+      .hero-right {
+        display: flex;
+        justify-content: center;
+        padding: 20px 20px 0
+      }
+
+      #liveGenPhone {
+        max-width: 340px;
+        width: 100%
+      }
+
+      .hiw-bento {
+        grid-template-columns: 1fr
+      }
+
+      .bs-grid {
+        grid-template-columns: 1fr
+      }
+
+      .bs-card-big {
+        grid-row: auto
+      }
+
+      .demo-body {
+        grid-template-columns: 1fr
+      }
+
+      .demo-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border)
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .noprompts>.container>div:last-child {
+        grid-template-columns: 1fr !important
+      }
+
+      .bs-grid>.bs-card-big {
+        min-height: auto
+      }
+    }
+
+    @media(max-width:700px) {
+      .out-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      section {
+        padding: 64px 0 !important
+      }
+
+      .container {
+        padding: 0 18px
+      }
+
+      h1 {
+        font-size: clamp(40px, 10vw, 58px) !important;
+        letter-spacing: -2px !important
+      }
+
+      .hero-sub {
+        font-size: 14px !important
+      }
+
+      .sh h2 {
+        font-size: clamp(24px, 6vw, 36px) !important
+      }
+
+      #rotatingWord {
+        min-width: 160px !important;
+        font-size: clamp(40px, 10vw, 58px) !important
+      }
+
+      .adcarousel {
+        padding: 28px 0
+      }
+
+      .hiw-bento {
+        gap: 12px
+      }
+
+      .bento-body {
+        padding: 20px
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .final {
+        padding: 80px 18px !important
+      }
+
+      .final h2 {
+        font-size: clamp(28px, 7vw, 44px) !important
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 14px
+      }
+
+      .hero-badge {
+        display: none
+      }
+
+      .hero-right {
+        padding: 10px 16px 0
+      }
+
+      #liveGenPhone {
+        max-width: 100%
+      }
+    }
+
+    @media(max-width:480px) {
+      .out-grid {
+        grid-template-columns: 1fr
+      }
+
+      .demo-body {
+        grid-template-columns: 1fr
+      }
+
+      .demo-right {
+        padding: 16px
+      }
+
+      .bs-grid {
+        gap: 12px
+      }
+
+      .bs-small {
+        padding: 18px
+      }
+
+      .tc {
+        padding: 20px
+      }
+
+      .adcarousel .ac-label {
+        font-size: 10px
+      }
+
+      #rotatingWord {
+        min-width: 130px !important;
+        padding: 2px 10px !important
+      }
+
+      .nav-inner {
+        padding: 0 16px
+      }
+
+      .container {
+        padding: 0 16px
+      }
+
+      .sh {
+        padding: 0 8px
+      }
+
+      [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important
+      }
+
+      [style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: 1fr !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <img src="assets/logo/Nixi-logo-trans.png" alt="Nixi" style="height:100px;width:auto">
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#noprompts">Zero prompts</a>
+        <a href="#brandsense">Brand Sense</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="https://tally.so/r/PdBaab" target="_blank" class="btn btn-primary" style="padding:8px 18px">Join the
+          Waitlist <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+            style="width:14px;height:14px">
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-tag"><span></span>AI Ad Creative Engine</div>
+          <h1
+            style="font-size:clamp(48px,6vw,72px);font-weight:700;letter-spacing:-2.5px;line-height:1.05;margin-bottom:20px">
+            No <span id="rotatingWord"
+              style="display:inline-block;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;padding:2px 18px;border-radius:12px;min-width:220px;text-align:center;vertical-align:baseline;overflow:hidden;position:relative"></span><br>Just
+            <span style="color:var(--accent)">ads.</span>
+          </h1>
+          <style>
+            @keyframes charsIn {
+              from {
+                transform: translateY(110%);
+                opacity: 0
+              }
+
+              to {
+                transform: translateY(0);
+                opacity: 1
+              }
+            }
+
+            @keyframes charsOut {
+              from {
+                transform: translateY(0);
+                opacity: 1
+              }
+
+              to {
+                transform: translateY(-110%);
+                opacity: 0
+              }
+            }
+
+            .char-in {
+              display: inline-block;
+              animation: charsIn .38s cubic-bezier(.22, 1, .36, 1) forwards
+            }
+
+            .char-out {
+              display: inline-block;
+              animation: charsOut .25s cubic-bezier(.55, 0, 1, .45) forwards
+            }
+          </style>
+          <script>
+            (function () {
+              var words = ['prompt.', 'brief.'];
+              var i = 0;
+              var el = document.getElementById('rotatingWord');
+
+              function showWord(word, animClass) {
+                el.innerHTML = '';
+                word.split('').forEach(function (ch, idx) {
+                  var s = document.createElement('span');
+                  s.textContent = ch == ' ' ? '\u00a0' : ch;
+                  s.className = animClass;
+                  s.style.animationDelay = (idx * 0.04) + 's';
+                  el.appendChild(s);
+                });
+              }
+
+              showWord(words[0], 'char-in');
+
+              setInterval(function () {
+                // animate out current chars
+                var spans = el.querySelectorAll('span');
+                spans.forEach(function (s, idx) {
+                  s.className = 'char-out';
+                  s.style.animationDelay = (idx * 0.03) + 's';
+                });
+                setTimeout(function () {
+                  i = (i + 1) % words.length;
+                  showWord(words[i], 'char-in');
+                }, 320);
+              }, 2400);
+            })();
+          </script>
+          <p class="hero-sub">Nixi exists because great ads shouldn't require a designer, a brief, or a big budget. Just
+            drop in your product, Nixi does the strategic thinking, builds the creative, and delivers ads engineered to
+            perform. In under 2 minutes.</p>
+          <a href="https://tally.so/r/PdBaab" target="_blank" class="btn btn-primary"
+            style="padding:14px 28px;font-size:14px">Join the Waitlist <svg viewBox="0 0 16 16" fill="none"
+              stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg></a>
+          <p style="margin-top:14px;font-size:12px;color:var(--text-3)">Free to join &nbsp;·&nbsp; <strong
+              style="color:var(--text-2)">Early access coming soon</strong></p>
+        </div>
+        <div class="hero-right">
+          <!-- LIVE GENERATION ANIMATION WIDGET -->
+          <div class="hero-phone" id="liveGenPhone"
+            style="max-width:320px;min-height:420px;display:flex;flex-direction:column">
+            <div class="hp-topbar">
+              <div class="hp-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span
+                  style="background:#28c840"></span></div>
+              <div class="hp-title">Nixi · Create Ads</div>
+            </div>
+            <div id="liveGenBody" style="padding:18px;flex:1;display:flex;flex-direction:column;gap:0;overflow:hidden">
+
+              <!-- PHASE 1: URL TYPING -->
+              <div id="lg-phase1" class="lg-phase" style="display:flex;flex-direction:column;gap:10px">
+                <div
+                  style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3);margin-bottom:2px">
+                  Product URL</div>
+                <div
+                  style="background:var(--bg2);border:1.5px solid var(--border);border-radius:11px;padding:11px 14px;display:flex;align-items:center;gap:9px">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#10b981;flex-shrink:0"></div>
+                  <span id="lg-url-text"
+                    style="font-size:12px;font-family:monospace;color:var(--text);flex:1;min-height:16px"></span>
+                  <span id="lg-cursor"
+                    style="display:inline-block;width:2px;height:14px;background:var(--accent);border-radius:1px;vertical-align:middle;animation:blink 1s step-end infinite"></span>
+                </div>
+                <button id="lg-gen-btn"
+                  style="width:100%;padding:10px;border-radius:10px;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;font-family:inherit;letter-spacing:.2px;opacity:0;transition:opacity .4s">
+                  ✦ Generate ad
+                </button>
+              </div>
+
+              <!-- PHASE 2: BRAND SCAN -->
+              <div id="lg-phase2" class="lg-phase" style="display:none;flex-direction:column;gap:9px">
+                <div
+                  style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin-bottom:2px">
+                  Scanning brand…</div>
+                <div id="lg-scan-list" style="display:flex;flex-direction:column;gap:7px"></div>
+              </div>
+
+              <!-- PHASE 3: GENERATING -->
+              <div id="lg-phase3" class="lg-phase"
+                style="display:none;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:16px;padding:16px 0">
+                <div style="position:relative;width:52px;height:52px">
+                  <div id="lg-logo-ring"
+                    style="position:absolute;inset:0;border-radius:50%;border:2.5px solid var(--accent-mid);border-top-color:var(--accent);animation:spin .9s linear infinite">
+                  </div>
+                  <div
+                    style="position:absolute;inset:6px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff">
+                    N</div>
+                </div>
+                <div style="text-align:center">
+                  <div id="lg-gen-copy"
+                    style="font-size:13px;font-weight:700;color:var(--text);letter-spacing:-.2px;transition:opacity .3s;min-height:20px">
+                    Building your ad...</div>
+                  <div style="display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px">
+                    <span class="lg-dot"
+                      style="width:5px;height:5px;border-radius:50%;background:var(--accent);animation:lg-pulse 1.1s ease infinite"></span>
+                    <span class="lg-dot"
+                      style="width:5px;height:5px;border-radius:50%;background:var(--accent);animation:lg-pulse 1.1s ease .22s infinite"></span>
+                    <span class="lg-dot"
+                      style="width:5px;height:5px;border-radius:50%;background:var(--accent);animation:lg-pulse 1.1s ease .44s infinite"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PHASE 4: AD OUTPUT -->
+              <div id="lg-phase4" class="lg-phase"
+                style="display:none;flex-direction:column;gap:10px;opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease">
+                <div id="lg-ad-card"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <style>
+            @keyframes lg-pulse {
+
+              0%,
+              100% {
+                opacity: 1;
+                transform: scale(1)
+              }
+
+              50% {
+                opacity: .3;
+                transform: scale(.6)
+              }
+            }
+
+            @keyframes lg-scanin {
+              from {
+                opacity: 0;
+                transform: translateX(-10px)
+              }
+
+              to {
+                opacity: 1;
+                transform: translateX(0)
+              }
+            }
+
+            .lg-phase {
+              display: flex
+            }
+
+            .lg-scan-item {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              padding: 9px 12px;
+              border-radius: 10px;
+              background: var(--bg2);
+              border: 1px solid var(--border);
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--text);
+              opacity: 0;
+              animation: lg-scanin .35s ease forwards
+            }
+
+            .lg-scan-check {
+              width: 18px;
+              height: 18px;
+              border-radius: 50%;
+              background: #10b981;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+              font-size: 9px;
+              color: #fff;
+              font-weight: 800
+            }
+          </style>
+
+
+
+          <div class="hero-badge hb1"><span>⚡</span>Under 2 minutes</div>
+          <div class="hero-badge hb2"><span>🎯</span>Meta-ready formats</div>
+          <div class="hero-badge hb3"><span>🎨</span>Brand-aware output</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AD CAROUSEL -->
+  <div class="adcarousel">
+    <div class="ac-label">Ads generated by Nixi</div>
+    <div style="overflow:hidden">
+      <div style="display:flex;flex-direction:row;gap:16px;width:max-content;animation:scrollFwd 40s linear infinite">
+        <img src="assets/carousel-ad1.png" alt="Ad 1" class="ac-img">
+        <img src="assets/carousel-ad2.png" alt="Ad 2" class="ac-img">
+        <img src="assets/carousel-ad3.png" alt="Ad 3" class="ac-img">
+        <img src="assets/carousel-ad4.png" alt="Ad 4" class="ac-img">
+        <img src="assets/carousel-ad5.png" alt="Ad 5" class="ac-img">
+        <img src="assets/carousel-ad6.png" alt="Ad 6" class="ac-img">
+        <img src="assets/carousel-ad7.png" alt="Ad 7" class="ac-img">
+        <img src="assets/carousel-ad8.png" alt="Ad 8" class="ac-img">
+        <!-- duplicate for seamless loop -->
+        <img src="assets/carousel-ad1.png" alt="Ad 1" class="ac-img">
+        <img src="assets/carousel-ad2.png" alt="Ad 2" class="ac-img">
+        <img src="assets/carousel-ad3.png" alt="Ad 3" class="ac-img">
+        <img src="assets/carousel-ad4.png" alt="Ad 4" class="ac-img">
+        <img src="assets/carousel-ad5.png" alt="Ad 5" class="ac-img">
+        <img src="assets/carousel-ad6.png" alt="Ad 6" class="ac-img">
+        <img src="assets/carousel-ad7.png" alt="Ad 7" class="ac-img">
+        <img src="assets/carousel-ad8.png" alt="Ad 8" class="ac-img">
+      </div>
+    </div>
+  </div>
+  <style>
+    .ac-img {
+      flex: 0 0 auto;
+      width: 250px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: contain;
+      display: block;
+      background: #f0f0f0
+    }
+  </style>
+
+  <!-- HOW IT WORKS -->
+  <section class="hiw" id="how">
+    <div class="container">
+      <div class="sh reveal">
+        <div class="sh-tag">How it works</div>
+        <h2>Three steps to a full campaign</h2>
+        <p>No brief. No designer. No waiting.</p>
+      </div>
+      <div class="hiw-bento">
+        <div class="bento reveal">
+          <div class="bento-visual">
+            <div class="bv-url">
+              <div class="bv-url-dot"></div>
+              <div class="bv-url-text">yourproduct.com/sneaker-pro</div>
+            </div>
+            <div class="bv-scan"><span>✓ Product name</span><span>✓ Images</span><span>✓ Price</span><span>✓
+                Category</span><span>✓ Brand voice</span></div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-num">1</div>
+            <h3>Drop in your product URL</h3>
+            <p>Paste your product link. Nixi reads your product and brand automatically.</p>
+          </div>
+        </div>
+        <div class="bento reveal">
+          <div class="bento-visual">
+            <div class="bv-angles">
+              <div class="bv-angle sel">
+                <div class="bv-angle-dot" style="background:#F97316"></div>Premium Lifestyle
+              </div>
+              <div class="bv-angle">
+                <div class="bv-angle-dot" style="background:#6366f1"></div>Bold Performance
+              </div>
+              <div class="bv-angle">
+                <div class="bv-angle-dot" style="background:#10b981"></div>Minimal Clean
+              </div>
+              <div class="bv-angle">
+                <div class="bv-angle-dot" style="background:#f59e0b"></div>Founder Story
+              </div>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-num">2</div>
+            <h3>Pick your campaign angle</h3>
+            <p>Choose from angles uniquely generated for your product and brand — each one a different creative
+              direction built around your audience.</p>
+          </div>
+        </div>
+        <div class="bento reveal">
+          <div class="bento-visual" style="padding:20px 20px 0;display:flex;align-items:center;justify-content:center">
+            <div style="position:relative;width:140px;height:100px">
+              <div
+                style="position:absolute;top:0;left:20px;width:90px;height:118px;border-radius:12px;background:linear-gradient(160deg,#0a1628,#1e3a5f);transform:rotate(-8deg);display:flex;flex-direction:column;justify-content:flex-end;padding:10px;overflow:hidden">
+                <div style="width:40px;height:4px;background:rgba(255,255,255,.4);border-radius:2px;margin-bottom:4px">
+                </div>
+                <div style="width:28px;height:4px;background:rgba(255,255,255,.25);border-radius:2px"></div>
+              </div>
+              <div
+                style="position:absolute;top:4px;left:12px;width:90px;height:118px;border-radius:12px;background:linear-gradient(160deg,#fff5f2,#ffd6c8);transform:rotate(-3deg);display:flex;flex-direction:column;justify-content:flex-end;padding:10px;overflow:hidden">
+                <div style="width:40px;height:4px;background:rgba(0,0,0,.2);border-radius:2px;margin-bottom:4px"></div>
+                <div style="width:28px;height:4px;background:rgba(0,0,0,.12);border-radius:2px"></div>
+              </div>
+              <div
+                style="position:absolute;top:8px;left:4px;width:90px;height:118px;border-radius:12px;background:linear-gradient(160deg,#1c1917,#44403c);display:flex;flex-direction:column;justify-content:flex-end;padding:10px;overflow:hidden">
+                <span
+                  style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:4px;background:#d97706;color:#fff;display:inline-block;margin-bottom:5px;width:fit-content">Craft</span>
+                <div style="width:44px;height:4px;background:rgba(255,255,255,.5);border-radius:2px;margin-bottom:4px">
+                </div>
+                <div style="width:30px;height:4px;background:rgba(255,255,255,.3);border-radius:2px"></div>
+              </div>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-num">3</div>
+            <h3>Get campaign-ready ad creatives</h3>
+            <p>Complete Meta and Instagram ad creatives — visual, headline, copy, CTA. Up to 3 unique ads per
+              generation. Ready to run.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- NO PROMPTS -->
+  <section class="noprompts" id="noprompts">
+    <div class="container">
+      <div class="sh reveal" style="margin-bottom:64px">
+        <div class="sh-tag">Zero prompts</div>
+        <h2>You bring the product.<br>Nixi brings the strategy.</h2>
+        <p>Other tools make you do the thinking. Nixi already knows what your ad needs.</p>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div style="background:#fafafa;border:1px solid #ebebeb;border-radius:20px;padding:32px">
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#aaa;margin-bottom:20px">
+            What other tools ask you</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">Describe
+                your target audience in detail</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">What tone
+                should the ad have?</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">Describe the
+                visual style you want</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">Write a
+                creative brief</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">List your
+                key selling points</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">Choose
+                colour palette and typography</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div
+                style="width:20px;height:20px;border-radius:6px;background:#e5e5e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:800;color:#999">
+                ✕</div><span style="font-size:14px;color:#aaa;text-decoration:line-through;line-height:1.5">Specify
+                headline and body copy</span>
+            </div>
+          </div>
+        </div>
+        <div
+          style="background:linear-gradient(135deg,#fff8f6,#fff2ee);border:1.5px solid #fad4c8;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div
+              style="font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#F97316;margin-bottom:20px">
+              What Nixi asks you</div>
+            <div
+              style="background:#fff;border:1.5px solid #fad4c8;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;margin-bottom:16px">
+              <div style="width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0"></div>
+              <span id="urlTyping" style="font-size:13px;font-family:monospace;color:#212121;flex:1"></span>
+              <div
+                style="width:2px;height:16px;background:#F97316;border-radius:1px;animation:blink 1s step-end infinite">
+              </div>
+            </div>
+            <div
+              style="background:linear-gradient(135deg,#F97316,#c2410c);border-radius:10px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer"
+              id="nixiGenBtn">
+              <span style="font-size:13px;font-weight:700;color:#fff">Generate ads</span>
+              <div id="genStatus" style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7)">Ready</div>
+            </div>
+          </div>
+          <div style="margin-top:28px">
+            <div
+              style="font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#aaa;margin-bottom:12px">
+              That's it. Nixi handles the rest.</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <span
+                style="font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;background:#fff;border:1px solid #fad4c8;color:#c95a3c">Brand
+                voice</span>
+              <span
+                style="font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;background:#fff;border:1px solid #fad4c8;color:#c95a3c">Visual
+                DNA</span>
+              <span
+                style="font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;background:#fff;border:1px solid #fad4c8;color:#c95a3c">Audience</span>
+              <span
+                style="font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;background:#fff;border:1px solid #fad4c8;color:#c95a3c">Campaign
+                angles</span>
+              <span
+                style="font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;background:#fff;border:1px solid #fad4c8;color:#c95a3c">Headlines
+                & copy</span>
+              <span
+                style="font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;background:#fff;border:1px solid #fad4c8;color:#c95a3c">Ad
+                format</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND SENSE -->
+  <section class="brandsense" id="brandsense">
+    <div class="container">
+      <div class="sh reveal">
+        <div class="sh-tag">Brand Sense</div>
+        <h2>Every ad knows your brand</h2>
+        <p>Nixi reads your brand once — and every ad reflects your identity, voice, and audience.</p>
+      </div>
+      <div class="bs-grid reveal">
+        <div class="bs-card-big">
+          <h3>Not generic. Never off-brand.</h3>
+          <p>Brand Sense extracts your visual DNA, tone, audience, and competitors — and injects all of it into every
+            creative.</p>
+          <div style="border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08);margin-top:auto">
+            <img src="assets/brandsense.png" alt="Brand Sense"
+              style="width:100%;height:auto;object-fit:contain;display:block">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start">
+          <div class="bs-small reveal">
+            <div class="bs-small-icon">🗣️</div>
+            <div>
+              <h4>Brand Voice & Tone</h4>
+              <p>Reads how your brand speaks and writes every headline, CTA, and tagline in that exact voice.</p>
+            </div>
+          </div>
+          <div class="bs-small reveal">
+            <div class="bs-small-icon">🎨</div>
+            <div>
+              <h4>Visual DNA</h4>
+              <p>Palette, lighting, composition, typography — your aesthetic in every output, automatically.</p>
+            </div>
+          </div>
+          <div class="bs-small reveal">
+            <div class="bs-small-icon">👥</div>
+            <div>
+              <h4>Audience Profile</h4>
+              <p>Demographics, interests, and buying triggers shape what angle and message each ad takes.</p>
+            </div>
+          </div>
+          <div class="bs-small reveal">
+            <div class="bs-small-icon">⚔️</div>
+            <div>
+              <h4>Competitor Awareness</h4>
+              <p>Knows who you're up against so your ads never accidentally look or sound like theirs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fafafa;border-top:1px solid #ebebeb;padding:80px 0">
+    <div class="container">
+      <div class="sh reveal" style="margin-bottom:48px">
+        <div class="sh-tag">FAQ</div>
+        <h2>Common questions</h2>
+        <p>Everything you need to know about Nixi.</p>
+      </div>
+      <div style="max-width:720px;margin:0 auto">
+
+        <details class="faq-item">
+          <summary class="faq-q">What is Nixi and how does it work?</summary>
+          <p class="faq-a">Nixi is an AI-powered ad creative generator built for D2C brands and marketers. You enter
+            your product URL, choose a campaign angle, and Nixi generates complete, brand-aware ad creatives — including
+            visual concept, headline, body copy, and CTA — ready to run on Meta and Instagram. No designer or creative
+            brief needed.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">How is Nixi different from Canva or other design tools?</summary>
+          <p class="faq-a">Canva and similar tools give you templates — you still design the ad yourself. Nixi generates
+            complete, campaign-ready ad creatives from scratch. It understands your brand identity, product, and
+            audience, then produces structured ads with performance-oriented copy and visuals. Zero design skills
+            required.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do I need a designer or prompt-writing skills to use Nixi?</summary>
+          <p class="faq-a">No. Nixi requires zero design skills and zero prompt writing. You bring the product URL —
+            Nixi reads your brand automatically and handles the creative strategy, visual direction, and copywriting.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What ad formats does Nixi support?</summary>
+          <p class="faq-a">Nixi generates ads in all major Meta and Instagram formats — Square, Portrait, Stories &amp;
+            Reels, and Landscape. Every output is formatted to the correct dimensions and text-safe zones for its
+            platform.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">How long does it take to generate an ad with Nixi?</summary>
+          <p class="faq-a">Once Nixi launches, the entire flow — brand scan, angle selection, and ad generation — is
+            designed to take under 3 minutes.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Is Nixi suitable for D2C brands on Meta and Instagram?</summary>
+          <p class="faq-a">Yes. Nixi is built specifically for D2C brands, e-commerce founders, and performance
+            marketers running ads on Meta and Instagram. It understands product categories like fashion, skincare,
+            footwear, food, and electronics.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Does Nixi understand my brand identity automatically?</summary>
+          <p class="faq-a">Yes. Nixi's Brand Sense feature scans your brand website and extracts your visual DNA, tone
+            of voice, colour palette, audience demographics, buying motivations, and competitor landscape. Every ad it
+            generates uses this data — so your creatives always feel on-brand, not generic.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item {
+      border-bottom: 1px solid #ebebeb;
+      list-style: none
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #ebebeb
+    }
+
+    .faq-q {
+      font-size: 15px;
+      font-weight: 700;
+      color: #212121;
+      letter-spacing: -.2px;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      list-style: none;
+      gap: 16px
+    }
+
+    .faq-q::-webkit-details-marker {
+      display: none
+    }
+
+    .faq-q::after {
+      content: '+';
+      color: #F97316;
+      font-size: 22px;
+      font-weight: 300;
+      flex-shrink: 0;
+      line-height: 1;
+      transition: transform .25s
+    }
+
+    details[open] .faq-q::after {
+      transform: rotate(45deg)
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.75;
+      padding-bottom: 20px;
+      margin: 0
+    }
+  </style>
+
+  <!-- FINAL CTA -->
+  <section style="padding:120px 28px;text-align:center;background:linear-gradient(180deg,#fff 0%,#fff8f6 100%)">
+    <div class="container">
+      <h2
+        style="font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-1.5px;line-height:1.08;max-width:600px;margin:0 auto 18px">
+        Be first to experience<br><em style="font-style:normal;color:#F97316">ads that actually convert</em></h2>
+      <p style="font-size:16px;color:#666;max-width:420px;margin:0 auto 32px;line-height:1.7">Nixi is coming soon. Join
+        the waitlist and get early access before everyone else.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
+        <a href="https://tally.so/r/PdBaab" target="_blank" class="btn btn-primary"
+          style="padding:15px 32px;font-size:15px">Join the Waitlist <svg viewBox="0 0 16 16" fill="none"
+            stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg></a>
+      </div>
+      <p style="font-size:12px;color:#aaa;margin-top:16px">Free to join · Early access coming soon</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a class="nav-logo" href="#" style="text-decoration:none">
+        <img src="assets/logo/Nixi-logo-trans.png" alt="Nixi" style="height:90px;width:auto">
+      </a>
+      <div class="footer-links"><a href="../pages/privacy-policy.html">Privacy Policy</a><a
+          href="../pages/terms-of-use.html">Terms of Use</a></div>
+      <div style="font-size:12px;color:var(--text-3)">© 2026 Nixi. AI ad creative generator.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.spill').forEach(p => {
+      p.addEventListener('click', () => { document.querySelectorAll('.spill').forEach(x => x.classList.remove('on')); p.classList.add('on'); });
+    });
+    function runDemo(btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;animation:spin .7s linear infinite"><path d="M8 2a6 6 0 1 0 6 6"/></svg> Generating…`;
+      btn.disabled = true;
+      document.querySelectorAll('.out-card').forEach(c => { c.style.opacity = '.3'; c.style.transform = 'scale(.97)'; });
+      setTimeout(() => {
+        document.querySelectorAll('.out-card').forEach((c, i) => { setTimeout(() => { c.style.transition = 'opacity .4s,transform .4s'; c.style.opacity = '1'; c.style.transform = 'scale(1)'; }, i * 120); });
+        btn.innerHTML = orig; btn.disabled = false;
+      }, 1400);
+    }
+
+    const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.querySelectorAll('.bv-angle').forEach(a => {
+      a.addEventListener('click', () => { document.querySelectorAll('.bv-angle').forEach(x => x.classList.remove('sel')); a.classList.add('sel'); });
+    });
+
+    (function () {
+      const text = 'yourproduct.com/sneaker-pro';
+      const el = document.getElementById('urlTyping');
+      const btn = document.getElementById('nixiGenBtn');
+      const status = document.getElementById('genStatus');
+      if (!el) return;
+      let i = 0, typing = true;
+      function typeLoop() {
+        if (typing) { if (i <= text.length) { el.textContent = text.slice(0, i); i++; setTimeout(typeLoop, 60); } else { typing = false; setTimeout(typeLoop, 2000); } }
+        else { if (i > 0) { el.textContent = text.slice(0, i); i--; setTimeout(typeLoop, 30); } else { typing = true; setTimeout(typeLoop, 600); } }
+      }
+      typeLoop();
+      btn.addEventListener('click', () => {
+        status.textContent = 'Generating…'; btn.style.opacity = '.7';
+        setTimeout(() => { status.textContent = '5 ads ready ✓'; btn.style.opacity = '1'; }, 1800);
+        setTimeout(() => { status.textContent = 'Ready'; }, 4000);
+      });
+    })();
+
+    // ── LIVE GENERATION ANIMATION ──────────────────────────────────────────────
+    (function initLiveGen() {
+      var BRANDS = [
+        { url: 'rhode.com/peptide-lip-tint', name: 'rhode', img: 'assets/rhode.png', bg: '#fff5f2' },
+        { url: 'nike.com/air-max-270', name: 'nike', img: 'assets/gullylabs.png', bg: '#0d0d20' },
+        { url: 'laneige.com/lip balm', name: 'laneige', img: 'assets/laneige.png', bg: '#e0f2fe' }
+      ];
+      var SCAN_ITEMS = ['Brand voice', 'Color palette', 'Audience', 'Competitors'];
+      var GEN_COPIES = ['Building your ad...', 'Crafting the headline...', 'Applying brand DNA...', 'Finalising creative...'];
+
+      var brandIdx = 0;
+      var urlEl = document.getElementById('lg-url-text');
+      var genBtn = document.getElementById('lg-gen-btn');
+      var phase1 = document.getElementById('lg-phase1');
+      var phase2 = document.getElementById('lg-phase2');
+      var phase3 = document.getElementById('lg-phase3');
+      var phase4 = document.getElementById('lg-phase4');
+      var scanList = document.getElementById('lg-scan-list');
+      var genCopy = document.getElementById('lg-gen-copy');
+      var adCard = document.getElementById('lg-ad-card');
+
+      if (!urlEl || !phase1) return; // guard: elements not present
+
+      function showPhase(ph) {
+        [phase1, phase2, phase3, phase4].forEach(function (p) {
+          p.style.display = 'none';
+          p.style.flexDirection = 'column';
+        });
+        ph.style.display = 'flex';
+      }
+
+      function typeUrl(url, done) {
+        urlEl.textContent = '';
+        var i = 0;
+        function step() {
+          if (i <= url.length) { urlEl.textContent = url.slice(0, i); i++; setTimeout(step, 48 + Math.random() * 28); }
+          else { done(); }
+        }
+        step();
+      }
+
+      function eraseUrl(done) {
+        var txt = urlEl.textContent;
+        var i = txt.length;
+        function step() {
+          if (i >= 0) { urlEl.textContent = txt.slice(0, i); i--; setTimeout(step, 22); }
+          else { done(); }
+        }
+        step();
+      }
+
+      function runScan(done) {
+        scanList.innerHTML = '';
+        var i = 0;
+        function next() {
+          if (i < SCAN_ITEMS.length) {
+            var el = document.createElement('div');
+            el.className = 'lg-scan-item';
+            el.style.animationDelay = (i * 0.14) + 's';
+            el.innerHTML = '<div class="lg-scan-check">\u2713</div><span>' + SCAN_ITEMS[i] + '</span><span style="margin-left:auto;font-size:10px;color:#10b981;font-weight:700">\u2713</span>';
+            scanList.appendChild(el);
+            i++;
+            setTimeout(next, 360);
+          } else { setTimeout(done, 300); }
+        }
+        next();
+      }
+
+      function runGenerating(done) {
+        var ci = 0;
+        genCopy.style.opacity = '1';
+        genCopy.textContent = GEN_COPIES[0];
+        var iv = setInterval(function () {
+          ci++;
+          if (ci < GEN_COPIES.length) {
+            genCopy.style.opacity = '0';
+            (function (idx) { setTimeout(function () { genCopy.textContent = GEN_COPIES[idx]; genCopy.style.opacity = '1'; }, 220); })(ci);
+          } else {
+            clearInterval(iv);
+            setTimeout(done, 300);
+          }
+        }, 750);
+      }
+
+      function buildAdCard(brand) {
+        adCard.style.cssText = 'border-radius:16px;overflow:hidden;position:relative;background:' + brand.bg + ';display:block';
+        adCard.innerHTML = '<img src="' + brand.img + '" alt="' + brand.name + ' ad" style="width:100%;height:auto;object-fit:contain;display:block;border-radius:16px">';
+      }
+
+      function runCycle() {
+        var brand = BRANDS[brandIdx];
+        brandIdx = (brandIdx + 1) % BRANDS.length;
+
+        // Phase 1 – type URL
+        showPhase(phase1);
+        genBtn.style.opacity = '0';
+        genBtn.style.transition = 'opacity .4s';
+
+        typeUrl(brand.url, function () {
+          genBtn.style.opacity = '1';
+          setTimeout(function () {
+            // flash button
+            genBtn.style.transform = 'scale(.96)';
+            setTimeout(function () { genBtn.style.transform = 'scale(1)'; }, 120);
+
+            // Phase 2 – scan
+            setTimeout(function () {
+              showPhase(phase2);
+              var lbl = phase2.querySelector('div');
+              if (lbl) lbl.textContent = 'Scanning ' + brand.name + '\u2026';
+              runScan(function () {
+
+                // Phase 3 – generating
+                showPhase(phase3);
+                runGenerating(function () {
+
+                  // Phase 4 – ad reveal
+                  buildAdCard(brand);
+                  phase4.style.opacity = '0';
+                  phase4.style.transform = 'translateY(14px)';
+                  phase4.style.transition = 'opacity .55s ease,transform .55s ease';
+                  showPhase(phase4);
+                  requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                      phase4.style.opacity = '1';
+                      phase4.style.transform = 'translateY(0)';
+                    });
+                  });
+
+                  // Hold then loop
+                  setTimeout(function () {
+                    phase4.style.opacity = '0';
+                    phase4.style.transform = 'translateY(14px)';
+                    setTimeout(function () {
+                      showPhase(phase1);
+                      eraseUrl(function () { setTimeout(runCycle, 400); });
+                    }, 500);
+                  }, 3400);
+
+                });
+              });
+            }, 350);
+          }, 900);
+        });
+      }
+
+      // Start after a short delay so everything is painted
+      setTimeout(runCycle, 800);
+    })();
+  </script>
+</body>
+
+</html>

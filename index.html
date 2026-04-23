@@ -1746,13 +1746,7 @@
       flex-direction: row;
       gap: 16px;
       width: max-content;
-      animation: scrollFwd 40s linear infinite;
       padding: 0 16px;
-    }
-
-    .ac-scroll:hover .ac-track,
-    .ac-scroll.dragging .ac-track {
-      animation-play-state: paused;
     }
 
     .ac-img {
@@ -1771,34 +1765,107 @@
     (function () {
       var scroll = document.getElementById('acScroll');
       var track = document.getElementById('acTrack');
+      var speed = 1; // px per frame
+      var paused = false;
       var isDown = false, startX, scrollLeft;
+      var velocity = 0, lastX, rafId;
 
-      // Infinite loop: jump back/forward when crossing the halfway point
-      function loopScroll() {
-        var half = track.scrollWidth / 2;
-        if (scroll.scrollLeft >= half) {
-          scroll.scrollLeft -= half;
-        } else if (scroll.scrollLeft <= 0) {
-          scroll.scrollLeft += half;
+      // Auto-scroll loop
+      function autoScroll() {
+        if (!paused) {
+          scroll.scrollLeft += speed;
+          // Seamless loop: jump back when we've scrolled past the first half
+          var half = track.scrollWidth / 2;
+          if (scroll.scrollLeft >= half) {
+            scroll.scrollLeft -= half;
+          }
         }
+        rafId = requestAnimationFrame(autoScroll);
       }
-      scroll.addEventListener('scroll', loopScroll);
+      // Seed initial scroll position to avoid jump on first loop
+      window.addEventListener('load', function () {
+        scroll.scrollLeft = 0;
+        autoScroll();
+      });
 
-      // Drag to scroll (mouse)
+      // Mouse drag
       scroll.addEventListener('mousedown', function (e) {
         isDown = true;
+        paused = true;
+        velocity = 0;
         scroll.classList.add('dragging');
-        startX = e.pageX - scroll.offsetLeft;
+        startX = e.pageX;
         scrollLeft = scroll.scrollLeft;
+        lastX = e.pageX;
       });
-      scroll.addEventListener('mouseleave', function () { isDown = false; scroll.classList.remove('dragging'); });
-      scroll.addEventListener('mouseup', function () { isDown = false; scroll.classList.remove('dragging'); });
-      scroll.addEventListener('mousemove', function (e) {
+      window.addEventListener('mouseup', function () {
+        if (!isDown) return;
+        isDown = false;
+        scroll.classList.remove('dragging');
+        // momentum: coast then resume auto-scroll
+        (function coast() {
+          if (Math.abs(velocity) > 0.5) {
+            scroll.scrollLeft -= velocity;
+            velocity *= 0.92;
+            // loop check during coast
+            var half = track.scrollWidth / 2;
+            if (scroll.scrollLeft >= half) scroll.scrollLeft -= half;
+            if (scroll.scrollLeft < 0) scroll.scrollLeft += half;
+            requestAnimationFrame(coast);
+          } else {
+            paused = false;
+          }
+        })();
+      });
+      window.addEventListener('mousemove', function (e) {
         if (!isDown) return;
         e.preventDefault();
-        var x = e.pageX - scroll.offsetLeft;
-        scroll.scrollLeft = scrollLeft - (x - startX);
+        velocity = e.pageX - lastX;
+        lastX = e.pageX;
+        var dx = e.pageX - startX;
+        scroll.scrollLeft = scrollLeft - dx;
+        // loop check while dragging
+        var half = track.scrollWidth / 2;
+        if (scroll.scrollLeft >= half) { scroll.scrollLeft -= half; scrollLeft -= half; }
+        if (scroll.scrollLeft < 0) { scroll.scrollLeft += half; scrollLeft += half; }
       });
+
+      // Touch drag
+      var touchStartX, touchScrollLeft;
+      scroll.addEventListener('touchstart', function (e) {
+        paused = true;
+        velocity = 0;
+        touchStartX = e.touches[0].pageX;
+        touchScrollLeft = scroll.scrollLeft;
+        lastX = touchStartX;
+      }, { passive: true });
+      scroll.addEventListener('touchmove', function (e) {
+        velocity = e.touches[0].pageX - lastX;
+        lastX = e.touches[0].pageX;
+        var dx = e.touches[0].pageX - touchStartX;
+        scroll.scrollLeft = touchScrollLeft - dx;
+        var half = track.scrollWidth / 2;
+        if (scroll.scrollLeft >= half) { scroll.scrollLeft -= half; touchScrollLeft -= half; }
+        if (scroll.scrollLeft < 0) { scroll.scrollLeft += half; touchScrollLeft += half; }
+      }, { passive: true });
+      scroll.addEventListener('touchend', function () {
+        (function coast() {
+          if (Math.abs(velocity) > 0.5) {
+            scroll.scrollLeft -= velocity;
+            velocity *= 0.92;
+            var half = track.scrollWidth / 2;
+            if (scroll.scrollLeft >= half) scroll.scrollLeft -= half;
+            if (scroll.scrollLeft < 0) scroll.scrollLeft += half;
+            requestAnimationFrame(coast);
+          } else {
+            paused = false;
+          }
+        })();
+      });
+
+      // Pause on hover (desktop)
+      scroll.addEventListener('mouseenter', function () { if (!isDown) paused = true; });
+      scroll.addEventListener('mouseleave', function () { if (!isDown) paused = false; });
     })();
   </script>
 

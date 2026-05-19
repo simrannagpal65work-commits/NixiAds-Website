@@ -1447,8 +1447,8 @@
         <a href="#faq">FAQ</a>
       </div>
       <div style="display:flex;gap:10px">
-        <a href="https://tally.so/r/PdBaab" target="_blank" class="btn btn-primary" style="padding:8px 18px">Join the
-          Waitlist <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+        <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary" style="padding:8px 18px">Try for
+          Free <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
             style="width:14px;height:14px">
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg></a>
@@ -1539,13 +1539,13 @@
           <p class="hero-sub">Nixi exists because great ads shouldn't require a designer, a brief, or a big budget. Just
             drop in your product, Nixi does the strategic thinking, builds the creative, and delivers ads engineered to
             perform. In under 2 minutes.</p>
-          <a href="https://tally.so/r/PdBaab" target="_blank" class="btn btn-primary"
-            style="padding:14px 28px;font-size:14px">Join the Waitlist <svg viewBox="0 0 16 16" fill="none"
+          <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary"
+            style="padding:14px 28px;font-size:14px">Try for Free <svg viewBox="0 0 16 16" fill="none"
               stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
               <path d="M3 8h10M9 4l4 4-4 4" />
             </svg></a>
           <p style="margin-top:14px;font-size:12px;color:var(--text-3)">Free to join &nbsp;·&nbsp; <strong
-              style="color:var(--text-2)">Early access coming soon</strong></p>
+              style="color:var(--text-2)">No credit card required</strong></p>
         </div>
         <div class="hero-right">
           <!-- LIVE GENERATION ANIMATION WIDGET -->
@@ -1709,7 +1709,7 @@
         <img src="assets/carousel-ad14.webp" alt="Ad 14" class="ac-img">
         <img src="assets/carousel-ad15.webp" alt="Ad 15" class="ac-img">
         <!-- duplicate for seamless loop -->
-         <img src="assets/carousel-ad1.webp" alt="Ad 1" class="ac-img">
+        <img src="assets/carousel-ad1.webp" alt="Ad 1" class="ac-img">
         <img src="assets/carousel-ad2.webp" alt="Ad 2" class="ac-img">
         <img src="assets/carousel-ad3.webp" alt="Ad 3" class="ac-img">
         <img src="assets/carousel-ad4.webp" alt="Ad 4" class="ac-img">
@@ -2158,8 +2158,8 @@
 
         <details class="faq-item">
           <summary class="faq-q">How long does it take to generate an ad with Nixi?</summary>
-          <p class="faq-a">Once Nixi launches, the entire flow — brand scan, angle selection, and ad generation — is
-            designed to take under 3 minutes.</p>
+          <p class="faq-a">The entire flow - brand scan, angle selection, and ad generation is
+            designed to take under 2 minutes.</p>
         </details>
 
         <details class="faq-item">
@@ -2237,16 +2237,17 @@
       <h2
         style="font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-1.5px;line-height:1.08;max-width:600px;margin:0 auto 18px">
         Be first to experience<br><em style="font-style:normal;color:#F97316">ads that actually convert</em></h2>
-      <p style="font-size:16px;color:#666;max-width:420px;margin:0 auto 32px;line-height:1.7">Nixi is coming soon. Join
-        the waitlist and get early access before everyone else.</p>
+      <p style="font-size:16px;color:#666;max-width:420px;margin:0 auto 32px;line-height:1.7">More ads. More angles.
+        More Hooks.
+        Build a full month of campaign-ready creatives in minutes - no designer, no brief, no wait.</p>
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
-        <a href="https://tally.so/r/PdBaab" target="_blank" class="btn btn-primary"
-          style="padding:15px 32px;font-size:15px">Join the Waitlist <svg viewBox="0 0 16 16" fill="none"
+        <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary"
+          style="padding:15px 32px;font-size:15px">Try for Free <svg viewBox="0 0 16 16" fill="none"
             stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg></a>
       </div>
-      <p style="font-size:12px;color:#aaa;margin-top:16px">Free to join · Early access coming soon</p>
+      <p style="font-size:12px;color:#aaa;margin-top:16px">Free to join · No credit card required</p>
     </div>
   </section>
 
@@ -2256,9 +2257,11 @@
       <a class="nav-logo" href="#" style="text-decoration:none">
         <img src="assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">
       </a>
-      <div class="footer-links"><a href="../pages/privacy-policy.html">Privacy Policy</a><a
-          href="../pages/terms-of-use.html">Terms of Use</a></div>
-      <div style="font-size:12px;color:var(--text-3)">© 2026 Nixi. AI ad creative generator.</div>
+      <div class="footer-links"><a href="pages/privacy-policy.html">Privacy Policy</a><a
+          href="pages/terms-of-use.html">Terms of Use</a><a
+          href="pages/refund-policy.html">Refund Policy</a></div>
+      <div style="font-size:12px;color:var(--text-3)">© <span id="copy-year"></span> Nixi. All rights reserved.
+      </div>
     </div>
   </footer>
 
@@ -2448,6 +2451,9 @@
           }, 900);
         });
       }
+
+      // ── COPYRIGHT YEAR ────────────────────────────────────────────────────────
+      document.getElementById('copy-year').textContent = new Date().getFullYear();
 
       // Start after a short delay so everything is painted
       setTimeout(runCycle, 800);

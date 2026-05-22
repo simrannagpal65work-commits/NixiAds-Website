@@ -1445,6 +1445,7 @@
         <a href="#noprompts">Zero prompts</a>
         <a href="#brandsense">Brand Sense</a>
         <a href="#faq">FAQ</a>
+        <a href="#pricing">Pricing</a>
       </div>
       <div style="display:flex;gap:10px">
         <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary" style="padding:8px 18px">Try for
@@ -2229,7 +2230,246 @@
       padding-bottom: 20px;
       margin: 0
     }
+
+    /* PRICING */
+    .pricing {
+      padding: 96px 0;
+      background: var(--bg2)
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 68px;
+      align-items: stretch
+    }
+
+    .plan-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px 24px;
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+      margin-top: 12px
+    }
+
+    .plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .08)
+    }
+
+    .plan-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(249, 115, 22, .15)
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      white-space: nowrap
+    }
+
+    .plan-name {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      margin-bottom: 6px
+    }
+
+    .plan-price {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--accent);
+      line-height: 1
+    }
+
+    .plan-price span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-3);
+      letter-spacing: 0
+    }
+
+    .plan-credits {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 4px 0 18px
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 18px
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex: 1
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--text-2)
+    }
+
+    .plan-features li::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      border: 1.5px solid var(--accent-mid);
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' stroke='%23F97316' stroke-width='2.2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8l3 3 6-6'/%3E%3C/svg%3E");
+      background-size: 12px;
+      background-repeat: no-repeat;
+      background-position: center
+    }
+
+    .plan-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: all .22s
+    }
+
+    .plan-btn-primary {
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(249, 115, 22, .3)
+    }
+
+    .plan-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249, 115, 22, .4)
+    }
+
+    .plan-btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border)
+    }
+
+    .plan-btn-ghost:hover {
+      background: var(--bg2)
+    }
+
+    @media(max-width:900px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:540px) {
+      .pricing-grid {
+        grid-template-columns: 1fr
+      }
+    }
   </style>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="sh reveal">
+        <div class="sh-tag">Pricing</div>
+        <h2>Simple, credit-based pricing</h2>
+        <p>Each creative generation or edit costs 1 credit. Pick the plan that fits you the best.</p>
+      </div>
+      <div class="pricing-grid reveal">
+
+        <!-- Starter -->
+        <div class="plan-card">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">₹899<span>/mo</span></div>
+          <div class="plan-credits">15 credits</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>15 credits/month</li>
+            <li>Generate up to 15 creatives</li>
+            <li>1 brand</li>
+          </ul>
+          <a href="https://app.nixiads.com" target="_blank" class="plan-btn plan-btn-ghost">Get Started</a>
+        </div>
+
+        <!-- Growth (featured) -->
+        <div class="plan-card featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-price">₹2,599<span>/mo</span></div>
+          <div class="plan-credits">45 credits</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>45 credits/month</li>
+            <li>Generate up to 45 creatives</li>
+            <li>3 brands</li>
+          </ul>
+          <a href="https://app.nixiads.com" target="_blank" class="plan-btn plan-btn-primary">Get Started</a>
+        </div>
+
+        <!-- Scale -->
+        <div class="plan-card">
+          <div class="plan-name">Scale</div>
+          <div class="plan-price">₹4,299<span>/mo</span></div>
+          <div class="plan-credits">75 credits</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>75 credits/month</li>
+            <li>Generate up to 75 creatives</li>
+            <li>7 brands</li>
+          </ul>
+          <a href="https://app.nixiads.com" target="_blank" class="plan-btn plan-btn-ghost">Get Started</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="plan-card">
+          <div class="plan-badge" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">Best Value</div>
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price">₹10,999<span>/mo</span></div>
+          <div class="plan-credits">200 credits</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>200 credits/month</li>
+            <li>Generate up to 200 creatives</li>
+            <li>12 brands</li>
+            <li>Dedicated support</li>
+          </ul>
+          <a href="https://app.nixiads.com" target="_blank" class="plan-btn plan-btn-ghost">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- FINAL CTA -->
   <section style="padding:120px 28px;text-align:center;background:linear-gradient(180deg,#fff 0%,#fff8f6 100%)">
@@ -2258,8 +2498,7 @@
         <img src="assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">
       </a>
       <div class="footer-links"><a href="pages/privacy-policy.html">Privacy Policy</a><a
-          href="pages/terms-of-use.html">Terms of Use</a><a
-          href="pages/refund-policy.html">Refund Policy</a></div>
+          href="pages/terms-of-use.html">Terms of Use</a><a href="pages/refund-policy.html">Refund Policy</a></div>
       <div style="font-size:12px;color:var(--text-3)">© <span id="copy-year"></span> Nixi. All rights reserved.
       </div>
     </div>

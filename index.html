@@ -3219,7 +3219,7 @@
         { url: 'lumora.com/lip balm', name: 'lumora', img: 'assets/lumora.webp', bg: '#e0f2fe' }
       ];
       var SCAN_ITEMS = ['Brand voice', 'Color palette', 'Audience', 'Competitors'];
-      var GEN_COPIES = ['Building your ad...', 'Crafting the headline...', 'Applying brand DNA...', 'Finalising creative...'];
+      var GEN_COPIES = ['Generating your ad...'];
 
       var brandIdx = 0;
       var urlEl = document.getElementById('lg-url-text');
@@ -3280,19 +3280,9 @@
       }
 
       function runGenerating(done) {
-        var ci = 0;
         genCopy.style.opacity = '1';
         genCopy.textContent = GEN_COPIES[0];
-        var iv = setInterval(function () {
-          ci++;
-          if (ci < GEN_COPIES.length) {
-            genCopy.style.opacity = '0';
-            (function (idx) { setTimeout(function () { genCopy.textContent = GEN_COPIES[idx]; genCopy.style.opacity = '1'; }, 220); })(ci);
-          } else {
-            clearInterval(iv);
-            setTimeout(done, 300);
-          }
-        }, 750);
+        setTimeout(done, 800);
       }
 
       function buildAdCard(brand) {

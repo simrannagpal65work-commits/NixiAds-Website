@@ -14,7 +14,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nixiads.com/" />
   <meta property="og:title" content="Nixi – AI Ad Creative Generator | Meta & Instagram Ads in 2 Minutes" />
-  <meta property="og:description" content="Nixi reads your brand website and generates campaign-ready ad creatives for Meta and Instagram. No designer, no brief, no prompts. Starts at ₹899/mo. Free to try." />
+  <meta property="og:description"
+    content="Nixi reads your brand website and generates campaign-ready ad creatives for Meta and Instagram. No designer, no brief, no prompts. Starts at ₹899/mo. Free to try." />
   <meta property="og:image" content="https://nixiads.com/assets/carousel-ad1.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -24,7 +25,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nixi – AI Ad Creative Generator" />
-  <meta name="twitter:description" content="Nixi reads your brand website and generates campaign-ready ad creatives for Meta and Instagram. No designer, no brief, no prompts." />
+  <meta name="twitter:description"
+    content="Nixi reads your brand website and generates campaign-ready ad creatives for Meta and Instagram. No designer, no brief, no prompts." />
   <meta name="twitter:image" content="https://nixiads.com/assets/carousel-ad1.webp" />
 
   <!-- JSON-LD: SoftwareApplication -->
@@ -250,6 +252,7 @@
       justify-content: space-between;
       width: 100%;
       max-width: 1140px;
+      height: 62px;
       margin: 0 auto;
       padding: 0 28px
     }
@@ -296,6 +299,248 @@
 
     .nav-links a:hover {
       color: var(--text)
+    }
+
+    /* hamburger + mobile drawer — always defined, toggled by JS/media */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      transition: background .2s
+    }
+
+    .nav-hamburger:hover {
+      background: var(--bg2)
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s
+    }
+
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    .nav-mobile-drawer {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 16px 16px;
+      border-top: 1px solid var(--border);
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(20px);
+      position: absolute;
+      top: 62px;
+      left: 0;
+      right: 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      z-index: 199
+    }
+
+    .nav-mobile-drawer.open {
+      display: flex
+    }
+
+    .nav-mobile-drawer a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      padding: 10px 8px;
+      border-radius: 8px;
+      transition: background .15s, color .15s
+    }
+
+    .nav-mobile-drawer a:hover {
+      background: var(--bg2);
+      color: var(--text)
+    }
+
+    .mob-feat-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 10px 8px;
+      border-radius: 8px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: background .15s, color .15s
+    }
+
+    .mob-feat-btn:hover {
+      background: var(--bg2);
+      color: var(--text)
+    }
+
+    .mob-feat-btn[aria-expanded="true"] {
+      color: var(--text)
+    }
+
+    .mob-feat-btn[aria-expanded="true"] svg {
+      transform: rotate(180deg)
+    }
+
+    .mob-feat-menu {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 4px 0 4px 8px
+    }
+
+    .mob-feat-menu.open {
+      display: flex
+    }
+
+    .mob-feat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background .15s
+    }
+
+    .mob-feat-item:hover {
+      background: var(--bg2)
+    }
+
+    .nav-mobile-drawer .mobile-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0
+    }
+
+    .nav-mobile-cta {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .nav-cta-desktop {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    /* nav dropdown */
+    .nav-dropdown {
+      position: relative
+    }
+
+    .nav-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      transition: color .2s
+    }
+
+    .nav-dropdown-btn:hover,
+    .nav-dropdown.open .nav-dropdown-btn {
+      color: var(--text)
+    }
+
+    .nav-dropdown.open #featChevron {
+      transform: rotate(180deg)
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: -16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .12);
+      padding: 8px;
+      min-width: 260px;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 300
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all
+    }
+
+    .nav-dropdown-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background .15s
+    }
+
+    .nav-dropdown-item:hover {
+      background: var(--bg2)
+    }
+
+    .ndi-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+      color: var(--accent)
+    }
+
+    .ndi-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -.2px;
+      margin-bottom: 2px
+    }
+
+    .ndi-sub {
+      font-size: 11px;
+      color: var(--text-2);
+      line-height: 1.4
     }
 
     .btn {
@@ -1481,7 +1726,19 @@
         display: none
       }
 
+      .nav-hamburger {
+        display: flex
+      }
+
+      .nav-cta-desktop {
+        display: none
+      }
+
       .noprompts>.container>div:last-child {
+        grid-template-columns: 1fr !important
+      }
+
+      #adclone .container>div:last-child {
         grid-template-columns: 1fr !important
       }
 
@@ -1625,8 +1882,9 @@
     }
   </style>
   <!-- Meta Pixel Code -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1608070970290006');fbq('track','PageView');</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1608070970290006&ev=PageView&noscript=1"/></noscript>
+  <script>!function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1608070970290006'); fbq('track', 'PageView');</script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1608070970290006&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
 
@@ -1639,13 +1897,36 @@
         <img src="assets/logo/Nixi-logo-trans.webp" alt="Nixi – AI Ad Generator" style="height:100px;width:auto">
       </a>
       <div class="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#noprompts">Zero prompts</a>
+        <div class="nav-dropdown" id="featDropdown">
+          <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="featDropBtn">
+            Features
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+              style="width:11px;height:11px;transition:transform .2s" id="featChevron">
+              <path d="M4 6l4 4 4-4" />
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="featMenu" role="menu">
+            <a href="#how" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">
+              <div class="ndi-icon">✦</div>
+              <div>
+                <div class="ndi-title">Create Ad</div>
+                <div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div>
+              </div>
+            </a>
+            <a href="clone.html" class="nav-dropdown-item" role="menuitem">
+              <div class="ndi-icon">⧉</div>
+              <div>
+                <div class="ndi-title">Ad Clone</div>
+                <div class="ndi-sub">Clone any ad's structure for your brand</div>
+              </div>
+            </a>
+          </div>
+        </div>
         <a href="#brandsense">Brand Sense</a>
         <a href="#faq">FAQ</a>
         <a href="#pricing">Pricing</a>
       </div>
-      <div style="display:flex;align-items:center;gap:10px">
+      <div class="nav-cta-desktop">
         <a href="https://app.nixiads.com" target="_blank"
           style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s"
           onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Login</a>
@@ -1655,6 +1936,50 @@
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg></a>
       </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Nav Drawer -->
+    <div class="nav-mobile-drawer" id="navMobileDrawer">
+      <!-- Features accordion -->
+      <button class="mob-feat-btn" id="mobFeatBtn" aria-expanded="false">
+        Features
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+          style="width:11px;height:11px;transition:transform .2s" id="mobFeatChevron">
+          <path d="M4 6l4 4 4-4" />
+        </svg>
+      </button>
+      <div class="mob-feat-menu" id="mobFeatMenu">
+        <a href="#how" class="mob-feat-item">
+          <div class="ndi-icon">✦</div>
+          <div>
+            <div class="ndi-title">Create Ad</div>
+            <div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div>
+          </div>
+        </a>
+        <a href="clone.html" class="mob-feat-item">
+          <div class="ndi-icon">⧉</div>
+          <div>
+            <div class="ndi-title">Ad Clone</div>
+            <div class="ndi-sub">Clone any ad's structure for your brand</div>
+          </div>
+        </a>
+      </div>
+      <div class="mobile-divider"></div>
+      <a href="#brandsense">Brand Sense</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing">Pricing</a>
+      <div class="mobile-divider"></div>
+      <div class="nav-mobile-cta">
+        <a href="https://app.nixiads.com" target="_blank"
+          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s">Login</a>
+        <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary" style="padding:8px 18px">Try for Free
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -1663,8 +1988,10 @@
     <div class="container">
       <div class="hero-inner">
         <div>
-          <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">AI Ad Creative Generator — Meta & Instagram Ads in 2 Minutes</h1>
-          <div class="hero-tag"><span></span>AI Ad Generator</div>
+          <h1
+            style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">
+            AI Ad Creative Generator — Meta & Instagram Ads in 2 Minutes</h1>
+          <div class="hero-tag"><span></span>Create Ad</div>
           <h1
             style="font-size:clamp(48px,6vw,72px);font-weight:700;letter-spacing:-2.5px;line-height:1.05;margin-bottom:20px">
             No <span id="rotatingWord"
@@ -1904,13 +2231,19 @@
         <img src="assets/carousel-ad3.webp" alt="AI ad creative for beauty product on Instagram by Nixi" class="ac-img">
         <img src="assets/carousel-ad4.webp" alt="Performance Meta ad for D2C brand generated by Nixi AI" class="ac-img">
         <img src="assets/carousel-ad5.webp" alt="Brand-aware Meta ad creative for apparel brand by Nixi" class="ac-img">
-        <img src="assets/carousel-ad6.webp" alt="AI-generated Instagram ad for health and wellness brand by Nixi" class="ac-img">
-        <img src="assets/carousel-ad7.webp" alt="Campaign-ready D2C ad creative for footwear brand by Nixi" class="ac-img">
-        <img src="assets/carousel-ad8.webp" alt="AI ad creative for food and beverage brand on Meta by Nixi" class="ac-img">
+        <img src="assets/carousel-ad6.webp" alt="AI-generated Instagram ad for health and wellness brand by Nixi"
+          class="ac-img">
+        <img src="assets/carousel-ad7.webp" alt="Campaign-ready D2C ad creative for footwear brand by Nixi"
+          class="ac-img">
+        <img src="assets/carousel-ad8.webp" alt="AI ad creative for food and beverage brand on Meta by Nixi"
+          class="ac-img">
         <img src="assets/carousel-ad10.webp" alt="Nixi-generated Instagram Stories ad for D2C brand" class="ac-img">
-        <img src="assets/carousel-ad12.webp" alt="Nixi AI ad generator output for electronics brand on Instagram" class="ac-img">
-        <img src="assets/carousel-ad14.webp" alt="Brand-aware Meta feed ad creative generated by Nixi for D2C" class="ac-img">
-        <img src="assets/carousel-ad15.webp" alt="AI-generated portrait ad for D2C skincare brand by Nixi" class="ac-img">
+        <img src="assets/carousel-ad12.webp" alt="Nixi AI ad generator output for electronics brand on Instagram"
+          class="ac-img">
+        <img src="assets/carousel-ad14.webp" alt="Brand-aware Meta feed ad creative generated by Nixi for D2C"
+          class="ac-img">
+        <img src="assets/carousel-ad15.webp" alt="AI-generated portrait ad for D2C skincare brand by Nixi"
+          class="ac-img">
         <!-- duplicate for seamless loop -->
         <img src="assets/carousel-ad1.webp" alt="" class="ac-img" loading="lazy" aria-hidden="true">
         <img src="assets/carousel-ad2.webp" alt="" class="ac-img" loading="lazy" aria-hidden="true">
@@ -2266,6 +2599,77 @@
     </div>
   </section>
 
+  <!-- AD CLONE -->
+  <section style="padding:96px 0;background:var(--bg2)" id="adclone">
+    <div class="container">
+      <div class="sh reveal">
+        <h2>Ad Clone</h2>
+        <p>See an ad structure you love? Upload it. Nixi extracts the composition and rebuilds it entirely for your
+          brand.</p>
+      </div>
+      <div class="adclone-grid reveal">
+        <!-- Left: image pair -->
+        <div class="adclone-images">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div
+              style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3)">
+              Reference ad</div>
+            <div
+              style="border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.08);aspect-ratio:3/4">
+              <img src="assets/clone/Clone-input1.webp" alt="Reference ad uploaded to Ad Clone"
+                style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+          </div>
+          <div
+            style="width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);flex-shrink:0">
+            →</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div
+              style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)">
+              Your brand</div>
+            <div
+              style="border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.08);aspect-ratio:3/4">
+              <img src="assets/clone/clone-output2.webp" alt="Ad cloned for your brand by Nixi"
+                style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+          </div>
+        </div>
+        <!-- Right: copy -->
+        <div>
+          <h3
+            style="font-size:clamp(24px,3vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:16px">
+            Clone the structure.<br>Keep <span style="color:var(--accent)">your brand.</span></h3>
+          <p style="font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:28px">Nixi reads the composition,
+            visual hierarchy, and text placement of any reference ad — then rebuilds it from scratch using your product,
+            your copy, and your Visual DNA. No design skills needed.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)">
+              <span
+                style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">✓</span>
+              Works on competitor ads from Facebook Ads Library
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)">
+              <span
+                style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">✓</span>
+              Scale your own winning ad formats across products
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)">
+              <span
+                style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">✓</span>
+              Zero prompt writing — just upload and go
+            </div>
+          </div>
+          <a href="clone.html" class="btn btn-primary" style="padding:13px 28px;font-size:14px">
+            Explore Ad Clone
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BRAND SENSE -->
   <section class="brandsense" id="brandsense">
     <div class="container">
@@ -2280,7 +2684,8 @@
           <p>Brand Sense extracts your visual DNA, tone, audience, and competitors — and injects all of it into every
             creative.</p>
           <div style="border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08);margin-top:auto">
-            <img src="assets/brandsense.webp" alt="Nixi Brand Sense dashboard showing visual DNA, brand voice, audience profile, and colour palette extracted from a brand website"
+            <img src="assets/brandsense.webp"
+              alt="Nixi Brand Sense dashboard showing visual DNA, brand voice, audience profile, and colour palette extracted from a brand website"
               style="width:100%;height:auto;object-fit:contain;display:block">
           </div>
         </div>
@@ -2598,6 +3003,34 @@
         grid-template-columns: 1fr
       }
     }
+
+    /* Ad Clone section */
+    .adclone-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 56px
+    }
+
+    .adclone-images {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: center
+    }
+
+    @media(max-width:768px) {
+      .adclone-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .adclone-images {
+        max-width: 480px;
+        margin: 0 auto
+      }
+    }
   </style>
 
   <!-- PRICING -->
@@ -2696,11 +3129,15 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <a class="nav-logo" href="#" style="text-decoration:none">
+      <a class="nav-logo" href="index.html" style="text-decoration:none">
         <img src="assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">
       </a>
-      <div class="footer-links"><a href="pages/privacy-policy.html">Privacy Policy</a><a
-          href="pages/terms-of-use.html">Terms of Use</a><a href="pages/refund-policy.html">Refund Policy</a><a href="blogs/index.html">Blogs</a></div>
+      <div class="footer-links">
+        <a href="pages/privacy-policy.html">Privacy Policy</a>
+        <a href="pages/terms-of-use.html">Terms of Use</a>
+        <a href="pages/refund-policy.html">Refund Policy</a>
+        <a href="blogs/index.html">Blogs</a>
+      </div>
       <div class="footer-social">
         <a href="https://www.instagram.com/nixi_ads" target="_blank" rel="noopener" aria-label="Instagram">
           <img src="assets/Instagram_icon.png" alt="Instagram" width="24" height="24">
@@ -2709,8 +3146,7 @@
           <img src="assets/linkedin.png" alt="LinkedIn" width="24" height="24">
         </a>
       </div>
-      <div style="font-size:12px;color:var(--text-3)">© <span id="copy-year"></span> Nixi. All rights reserved.
-      </div>
+      <div style="font-size:12px;color:var(--text-3)">© <span id="copy-year"></span> Nixi. All rights reserved.</div>
     </div>
   </footer>
 
@@ -2731,6 +3167,23 @@
 
     const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: .1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // ── FEATURES DROPDOWN ────────────────────────────────────────────────────
+    (function () {
+      var dd = document.getElementById('featDropdown');
+      var btn = document.getElementById('featDropBtn');
+      if (!dd || !btn) return;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function () {
+        dd.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dd.addEventListener('click', function (e) { e.stopPropagation(); });
+    })();
 
     document.querySelectorAll('.bv-angle').forEach(a => {
       a.addEventListener('click', () => { document.querySelectorAll('.bv-angle').forEach(x => x.classList.remove('sel')); a.classList.add('sel'); });
@@ -2903,6 +3356,40 @@
 
       // ── COPYRIGHT YEAR ────────────────────────────────────────────────────────
       document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+      // ── MOBILE HAMBURGER ──────────────────────────────────────────────────────
+      const hamburger = document.getElementById('navHamburger');
+      const drawer = document.getElementById('navMobileDrawer');
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = drawer.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        // reset features accordion when closing drawer
+        if (!isOpen) {
+          mobFeatMenu.classList.remove('open');
+          mobFeatBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          drawer.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobFeatMenu.classList.remove('open');
+          mobFeatBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // ── MOBILE FEATURES ACCORDION ─────────────────────────────────────────────
+      const mobFeatBtn = document.getElementById('mobFeatBtn');
+      const mobFeatMenu = document.getElementById('mobFeatMenu');
+
+      mobFeatBtn.addEventListener('click', () => {
+        const isOpen = mobFeatMenu.classList.toggle('open');
+        mobFeatBtn.setAttribute('aria-expanded', String(isOpen));
+      });
 
       // Start after a short delay so everything is painted
       setTimeout(runCycle, 800);

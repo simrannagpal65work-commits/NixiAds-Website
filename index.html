@@ -1633,28 +1633,31 @@
     }
 
     footer {
-      padding: 36px 28px;
-      border-top: 1px solid var(--border)
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 32px 28px
     }
 
     .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       max-width: 1140px;
       margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 14px
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center
     }
 
     .footer-links {
       display: flex;
-      gap: 22px
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center
     }
 
     .footer-links a {
       font-size: 12px;
-      color: var(--text-3);
+      color: var(--text-2);
       text-decoration: none
     }
 
@@ -1805,12 +1808,6 @@
         font-size: clamp(28px, 7vw, 44px) !important
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px
-      }
-
       .footer-links {
         flex-wrap: wrap;
         gap: 14px
@@ -1909,7 +1906,7 @@
             </svg>
           </button>
           <div class="nav-dropdown-menu" id="featMenu" role="menu">
-            <a href="#how" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">
+            <a href="#" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">
               <div class="ndi-icon">✦</div>
               <div>
                 <div class="ndi-title">Create Ad</div>
@@ -1954,7 +1951,7 @@
         </svg>
       </button>
       <div class="mob-feat-menu" id="mobFeatMenu">
-        <a href="#how" class="mob-feat-item">
+        <a href="#" class="mob-feat-item">
           <div class="ndi-icon">✦</div>
           <div>
             <div class="ndi-title">Create Ad</div>
@@ -1977,8 +1974,10 @@
       <div class="nav-mobile-cta">
         <a href="https://app.nixiads.com" target="_blank"
           style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s">Login</a>
-        <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary" style="padding:8px 18px">Try for Free
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+        <a href="https://app.nixiads.com" target="_blank"
+          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s"
+          onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Try Now
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px">
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg>
         </a>
@@ -2073,7 +2072,7 @@
             drop in your product, Nixi does the strategic thinking, builds the creative, and delivers ads engineered to
             perform. In under 2 minutes.</p>
           <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary"
-            style="padding:14px 28px;font-size:14px">Try for Free <svg viewBox="0 0 16 16" fill="none"
+            style="padding:14px 28px;font-size:14px">Try Now <svg viewBox="0 0 16 16" fill="none"
               stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
               <path d="M3 8h10M9 4l4 4-4 4" />
             </svg></a>
@@ -3120,7 +3119,7 @@
         Build a full month of campaign-ready creatives in minutes - no designer, no brief, no wait.</p>
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
         <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary"
-          style="padding:15px 32px;font-size:15px">Try for Free <svg viewBox="0 0 16 16" fill="none"
+          style="padding:15px 32px;font-size:15px">Try Now <svg viewBox="0 0 16 16" fill="none"
             stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg></a>
@@ -3185,7 +3184,12 @@
         dd.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
       });
-      dd.addEventListener('click', function (e) { e.stopPropagation(); });
+      dd.querySelectorAll('.nav-dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          dd.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
     })();
 
     document.querySelectorAll('.bv-angle').forEach(a => {

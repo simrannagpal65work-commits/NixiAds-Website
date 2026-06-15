@@ -9,9 +9,45 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--accent:#E76F51;--accent-light:#fff2ee;--accent-mid:#fad4c8;--accent-dark:#c95a3c;--text:#212121;--text-2:#666;--text-3:#aaa;--bg:#fff;--border:#ebebeb}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:62px}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;display:flex;align-items:center;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1140px;margin:0 auto;padding:0 28px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;display:flex;flex-direction:column;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1140px;margin:0 auto;padding:0 28px;height:62px;flex-shrink:0}
 .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;border-radius:6px;transition:background .2s}
+.nav-hamburger:hover{background:#fafafa}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#212121;border-radius:2px;transition:transform .25s,opacity .25s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile-drawer{display:none;flex-direction:column;gap:4px;padding:12px 16px 16px;border-top:1px solid #ebebeb;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);position:absolute;top:62px;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:199}
+.nav-mobile-drawer.open{display:flex}
+.nav-mobile-drawer a{font-size:15px;font-weight:500;color:#666;text-decoration:none;padding:10px 8px;border-radius:8px;transition:background .15s,color .15s}
+.nav-mobile-drawer a:hover{background:#fafafa;color:#212121}
+.mobile-divider{height:1px;background:#ebebeb;margin:4px 0}
+.nav-cta-desktop{display:flex;align-items:center;gap:10px}
+.nav-mobile-cta{display:flex;align-items:center;gap:10px;padding:8px 8px 0}
+.mob-feat-btn{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:15px;font-weight:500;color:#666;padding:10px 8px;border-radius:8px;border:none;background:none;cursor:pointer;transition:background .15s,color .15s}
+.mob-feat-btn:hover{background:#fafafa;color:#212121}
+.mob-feat-btn[aria-expanded="true"]{color:#212121}
+.mob-feat-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mob-feat-menu{display:none;flex-direction:column;gap:4px;padding:4px 0 4px 8px}
+.mob-feat-menu.open{display:flex}
+.mob-feat-item{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:10px;text-decoration:none;color:inherit;transition:background .15s}
+.mob-feat-item:hover{background:#fafafa}
+.ndi-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#fff7ed,#fed7aa);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ndi-title{font-size:13px;font-weight:700;color:#212121;line-height:1.3}
+.ndi-sub{font-size:11px;color:#666;margin-top:2px;line-height:1.4}
+@media(max-width:900px){.nav-hamburger{display:flex}.nav-links{display:none}.nav-cta-desktop{display:none}}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;color:#666;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#212121}
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:500;color:#666;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;transition:color .2s;line-height:normal}
+.nav-dropdown-btn:hover,.nav-dropdown.open .nav-dropdown-btn{color:#212121}
+.nav-dropdown.open #featChevron{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:-16px;background:#fff;border:1px solid #ebebeb;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:8px;min-width:260px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:300}
+.nav-dropdown.open .nav-dropdown-menu{opacity:1;transform:translateY(0);pointer-events:all}
+.nav-dropdown-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;text-decoration:none;color:#212121;transition:background .15s}
+.nav-dropdown-item:hover{background:#fafafa}
 .logo-mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#E76F51,#d45f41);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff}
 .nav-logo span{font-weight:750;font-size:16px;color:var(--text);letter-spacing:-.4px}
 .container{max-width:720px;margin:0 auto;padding:64px 28px 100px}
@@ -24,7 +60,14 @@ h2{font-size:18px;font-weight:800;letter-spacing:-.4px;margin:36px 0 10px;color:
 p{font-size:15px;color:var(--text-2);margin-bottom:14px;line-height:1.75}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-footer{border-top:1px solid var(--border);padding:28px;text-align:center;font-size:12px;color:var(--text-3)}
+footer{background:#fafafa;border-top:1px solid var(--border);padding:32px 28px}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.footer-links a{font-size:12px;color:#666;text-decoration:none}
+.footer-links a:hover{color:#212121}
+.footer-social{display:flex;gap:14px;align-items:center}
+.footer-social a{display:flex;align-items:center;opacity:.6;transition:opacity .2s}
+.footer-social a:hover{opacity:1}
 </style>
 <!-- Meta Pixel Code -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1608070970290006');fbq('track','PageView');</script>
@@ -38,6 +81,66 @@ footer{border-top:1px solid var(--border);padding:28px;text-align:center;font-si
     <a class="nav-logo" href="../index.html">
       <img src="../assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:100px;width:auto">
     </a>
+    <div class="nav-links">
+        <div class="nav-dropdown" id="featDropdown">
+          <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="featDropBtn">
+            Features
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;transition:transform .2s" id="featChevron"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="featMenu" role="menu">
+            <a href="../index.html" class="nav-dropdown-item" role="menuitem">
+              <div class="ndi-icon">✦</div>
+              <div><div class="ndi-title">Create Ad</div><div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div></div>
+            </a>
+            <a href="../clone.html" class="nav-dropdown-item" role="menuitem">
+              <div class="ndi-icon">⧉</div>
+              <div><div class="ndi-title">Ad Clone</div><div class="ndi-sub">Clone any ad's structure for your brand</div></div>
+            </a>
+          </div>
+        </div>
+        <a href="../index.html#brandsense">Brand Sense</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../index.html#pricing">Pricing</a>
+        <a href="../blogs/index.html">Blogs</a>
+      </div>
+    <div class="nav-cta-desktop">
+      <a href="https://app.nixiads.com" target="_blank" style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Login</a>
+      <a href="https://app.nixiads.com" target="_blank" style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Try Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Mobile Nav Drawer -->
+  <div class="nav-mobile-drawer" id="navMobileDrawer">
+    <button class="mob-feat-btn" id="mobFeatBtn" aria-expanded="false">
+      Features
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;transition:transform .2s"><path d="M4 6l4 4 4-4"/></svg>
+    </button>
+    <div class="mob-feat-menu" id="mobFeatMenu">
+      <a href="../index.html" class="mob-feat-item">
+        <div class="ndi-icon">✦</div>
+        <div><div class="ndi-title">Create Ad</div><div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div></div>
+      </a>
+      <a href="../clone.html" class="mob-feat-item">
+        <div class="ndi-icon">⧉</div>
+        <div><div class="ndi-title">Ad Clone</div><div class="ndi-sub">Clone any ad's structure for your brand</div></div>
+      </a>
+    </div>
+    <div class="mobile-divider"></div>
+    <a href="../index.html#brandsense">Brand Sense</a>
+    <a href="../index.html#pricing">Pricing</a>
+    <a href="../blogs/index.html">Blogs</a>
+    <div class="mobile-divider"></div>
+    <div class="nav-mobile-cta">
+      <a href="https://app.nixiads.com" target="_blank"
+        style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s">Login</a>
+      <a href="https://app.nixiads.com" target="_blank"
+        style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s"
+        onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Try Now
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -68,9 +171,59 @@ footer{border-top:1px solid var(--border);padding:28px;text-align:center;font-si
 </div>
 
 <footer>
-  © <span id="copy-year"></span> Nixi. All rights reserved. &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-use.html">Terms of Use</a> &nbsp;·&nbsp; <a href="refund-policy.html">Refund Policy</a>
+  <div class="footer-inner">
+    <a href="../index.html" style="text-decoration:none">
+      <img src="../assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">
+    </a>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="../blogs/index.html">Blogs</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/nixi_ads" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="../assets/Instagram_icon.png" alt="Instagram" width="24" height="24">
+      </a>
+      <a href="https://www.linkedin.com/company/nixi-ads" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="../assets/linkedin.png" alt="LinkedIn" width="24" height="24">
+      </a>
+    </div>
+    <div style="font-size:12px;color:#aaa">© <span id="copy-year"></span> Nixi. All rights reserved.</div>
+  </div>
 </footer>
-<script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
-
-</body>
-</html>
+<script>
+  document.getElementById('copy-year').textContent = new Date().getFullYear();
+  const hamburger = document.getElementById('navHamburger');
+  const drawer = document.getElementById('navMobileDrawer');
+  const mobFeatBtn = document.getElementById('mobFeatBtn');
+  const mobFeatMenu = document.getElementById('mobFeatMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    if (!isOpen) { mobFeatMenu.classList.remove('open'); mobFeatBtn.setAttribute('aria-expanded', 'false'); }
+  });
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobFeatMenu.classList.remove('open');
+      mobFeatBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  mobFeatBtn.addEventListener('click', () => {
+    const isOpen = mobFeatMenu.classList.toggle('open');
+    mobFeatBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+  // desktop features dropdown
+  (function() {
+    var dd = document.getElementById('featDropdown');
+    var btn = document.getElementById('featDropBtn');
+    if (!dd || !btn) return;
+    btn.addEventListener('click', function(e) { e.stopPropagation(); var open = dd.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+    document.addEventListener('click', function() { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    dd.querySelectorAll('.nav-dropdown-item').forEach(function(item) { item.addEventListener('click', function() { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+  })();
+</script>

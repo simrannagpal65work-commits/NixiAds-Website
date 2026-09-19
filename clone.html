@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Ad Clone – Nixi | Clone Any Ad's Structure For Your Brand</title>
   <meta name="description"
-    content="Upload any ad — yours or a competitor's. Nixi reads its structure, composition, and layout, then recreates it with your product, your copy, and your brand aesthetic." />
+    content="Upload any ad - yours or a competitor's. Nixi reads its structure, composition, and layout, then recreates it with your product, your copy, and your brand aesthetic." />
   <link rel="canonical" href="https://nixiads.com/clone.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nixiads.com/clone.html" />
   <meta property="og:title" content="Ad Clone – Nixi | Clone Any Ad's Structure For Your Brand" />
   <meta property="og:description"
-    content="Upload any ad — yours or a competitor's. Nixi reads its structure, composition, and layout, then recreates it with your product, your copy, and your brand aesthetic." />
+    content="Upload any ad - yours or a competitor's. Nixi reads its structure, composition, and layout, then recreates it with your product, your copy, and your brand aesthetic." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
@@ -27,7 +27,7 @@
         "name": "What exactly does Ad Clone copy from a reference ad?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ad Clone reads structural and compositional signals only — the layout type, visual hierarchy, where the eye lands first, depth of field behaviour, shadow treatment, typography style (font weight, case, tracking, size relative to frame), and text zone placement. It does not copy any visual content, brand colours, backgrounds, product imagery, or copy from the reference ad."
+          "text": "Ad Clone reads structural and compositional signals only - the layout type, visual hierarchy, where the eye lands first, depth of field behaviour, shadow treatment, typography style (font weight, case, tracking, size relative to frame), and text zone placement. It does not copy any visual content, brand colours, backgrounds, product imagery, or copy from the reference ad."
         }
       },
       {
@@ -35,7 +35,7 @@
         "name": "Can I use a competitor's ad as the reference?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. When you upload a competitor ad, Nixi extracts the composition blueprint only — layout, hierarchy, depth, and typography treatment. Nothing brand-specific is carried over: no faces, no logos, no brand names, no background environments, no product packaging. Every piece of copy is freshly written for your brand and product. The output looks like it was conceived for your brand from day one."
+          "text": "Yes. When you upload a competitor ad, Nixi extracts the composition blueprint only - layout, hierarchy, depth, and typography treatment. Nothing brand-specific is carried over: no faces, no logos, no brand names, no background environments, no product packaging. Every piece of copy is freshly written for your brand and product. The output looks like it was conceived for your brand from day one."
         }
       },
       {
@@ -43,7 +43,7 @@
         "name": "How is this different from just recreating an ad manually in Canva?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "With Canva you're working from a template — you still have to place the product, write the copy, pick the colours, and make every design decision yourself. Ad Clone does all of that automatically. It reads what makes the reference ad work compositionally, then rebuilds the entire ad using your product, your brand's visual DNA, and freshly generated copy. No design skills or prompt writing required."
+          "text": "With Canva you're working from a template - you still have to place the product, write the copy, pick the colours, and make every design decision yourself. Ad Clone does all of that automatically. It reads what makes the reference ad work compositionally, then rebuilds the entire ad using your product, your brand's visual DNA, and freshly generated copy. No design skills or prompt writing required."
         }
       },
       {
@@ -51,7 +51,7 @@
         "name": "Will the cloned ad look like a copy of the original?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. The cloned ad shares the same compositional structure as the reference — the same layout logic, visual hierarchy, and text arrangement — but everything visible is entirely different. The product, background, colour palette, lighting, styling, and all copy are generated fresh for your brand. A viewer familiar with the reference ad would not recognise any connection."
+          "text": "No. The cloned ad shares the same compositional structure as the reference - the same layout logic, visual hierarchy, and text arrangement - but everything visible is entirely different. The product, background, colour palette, lighting, styling, and all copy are generated fresh for your brand. A viewer familiar with the reference ad would not recognise any connection."
         }
       },
       {
@@ -59,7 +59,7 @@
         "name": "What file formats can I upload as a reference ad?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can upload any JPG, PNG, or WebP image — including screenshots taken directly from Facebook Ads Library, Instagram, or your own Meta Ads Manager. There's no need for a high-resolution source; a standard screenshot is sufficient for Nixi to read the composition."
+          "text": "You can upload any JPG, PNG, or WebP image - including screenshots taken directly from Facebook Ads Library, Instagram, or your own Meta Ads Manager. There's no need for a high-resolution source; a standard screenshot is sufficient for Nixi to read the composition."
         }
       },
       {
@@ -75,7 +75,7 @@
         "name": "Does Ad Clone work for both square and vertical ad formats?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Ad Clone supports all Meta and Instagram formats — Square (1:1), Portrait (4:5 and 2:3), and Landscape (1.91:1). You choose the output format during the flow. Nixi adapts the cloned composition to the selected format's aspect ratio and text-safe zones automatically."
+          "text": "Yes. Ad Clone supports all Meta and Instagram formats - Square (1:1), Portrait (4:5 and 2:3), and Landscape (1.91:1). You choose the output format during the flow. Nixi adapts the cloned composition to the selected format's aspect ratio and text-safe zones automatically."
         }
       }
     ]
@@ -174,152 +174,60 @@
       color: var(--text)
     }
 
-    /* hamburger + mobile drawer */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      border-radius: 6px;
-      transition: background .2s
-    }
-
-    .nav-hamburger:hover {
-      background: var(--bg2)
-    }
-
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: transform .25s, opacity .25s
-    }
-
-    .nav-hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg)
-    }
-
-    .nav-hamburger.open span:nth-child(2) {
-      opacity: 0
-    }
-
-    .nav-hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg)
-    }
-
-    .nav-cta-desktop {
+    .nav-cta-group {
       display: flex;
       align-items: center;
       gap: 10px
     }
 
-    .nav-mobile-drawer {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      padding: 12px 16px 16px;
-      border-top: 1px solid var(--border);
-      background: rgba(255, 255, 255, .97);
-      backdrop-filter: blur(20px);
-      position: absolute;
-      top: 62px;
-      left: 0;
-      right: 0;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-      z-index: 199
-    }
-
-    .nav-mobile-drawer.open {
-      display: flex
-    }
-
-    .nav-mobile-drawer a {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-2);
+    .nav-login {
+      font-size: 13px;
+      font-weight: 600;
       text-decoration: none;
-      padding: 10px 8px;
-      border-radius: 8px;
-      transition: background .15s, color .15s
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      color: var(--accent);
+      background: transparent;
+      transition: all .2s
     }
 
-    .nav-mobile-drawer a:hover {
-      background: var(--bg2);
-      color: var(--text)
+    .nav-login:hover {
+      border-color: var(--accent)
     }
 
-    .mob-feat-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-2);
-      padding: 10px 8px;
-      border-radius: 8px;
+    .btn-primary {
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
       border: none;
-      background: none;
       cursor: pointer;
-      transition: background .15s, color .15s
+      transition: all .2s
     }
 
-    .mob-feat-btn:hover {
-      background: var(--bg2);
-      color: var(--text)
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249, 115, 22, .45)
     }
 
-    .mob-feat-btn[aria-expanded="true"] {
-      color: var(--text)
-    }
-
-    .mob-feat-btn[aria-expanded="true"] svg {
-      transform: rotate(180deg)
-    }
-
-    .mob-feat-menu {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      padding: 4px 0 4px 8px
-    }
-
-    .mob-feat-menu.open {
-      display: flex
-    }
-
-    .mob-feat-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 10px;
+    .btn-demo {
+      font-size: 13px;
+      font-weight: 600;
       text-decoration: none;
-      transition: background .15s
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1.5px solid var(--accent-mid, #fed7aa);
+      color: var(--accent);
+      background: var(--accent-light, #fff7ed);
+      transition: all .2s
     }
 
-    .mob-feat-item:hover {
-      background: var(--bg2)
-    }
-
-    .mobile-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 4px 0
-    }
-
-    .nav-mobile-cta {
-      display: flex;
-      gap: 8px;
-      margin-top: 8px
+    .btn-demo:hover {
+      background: var(--accent-mid, #fed7aa)
     }
 
     /* dropdown */
@@ -347,7 +255,13 @@
       color: var(--text)
     }
 
-    .nav-dropdown.open #featChevron {
+    .nav-dropdown-btn svg {
+      width: 11px;
+      height: 11px;
+      transition: transform .2s
+    }
+
+    .nav-dropdown.open .nav-dropdown-btn svg {
       transform: rotate(180deg)
     }
 
@@ -459,6 +373,14 @@
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -2.5px;
+      line-height: 1.05;
+      margin-bottom: 20px
     }
 
     .hero-tag {
@@ -837,11 +759,13 @@
     }
 
     .step-card {
+      position: relative;
       background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--r);
       overflow: hidden;
-      transition: transform .25s, box-shadow .25s
+      transition: transform .25s, box-shadow .25s;
+      padding: 32px 28px
     }
 
     .step-card:hover {
@@ -849,23 +773,31 @@
       box-shadow: 0 16px 48px rgba(0, 0, 0, .08)
     }
 
+    .steps-simple.steps{gap:22px}
+    .steps-simple .step-card:not(:last-child):after{
+      content:'';
+      position:absolute;
+      top:38px;
+      right:-22px;
+      width:22px;
+      height:2px;
+      background:linear-gradient(90deg,#F97316,#c2410c);
+      z-index:2
+    }
+
     .step-body {
-      padding: 28px
+      margin-top: 14px
     }
 
     .step-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -1px;
       background: linear-gradient(135deg, #F97316, #c2410c);
-      color: #fff;
-      font-weight: 800;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(249, 115, 22, .3)
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1
     }
 
     .step-card h3 {
@@ -879,128 +811,6 @@
       font-size: 13px;
       color: var(--text-2);
       line-height: 1.65
-    }
-
-    .step-visual {
-      padding: 20px 20px 0
-    }
-
-    /* step 1 visual — upload mockup */
-    .sv-upload {
-      border: 1.5px dashed var(--accent-mid);
-      border-radius: 12px;
-      background: var(--accent-light);
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-align: center;
-      font-size: 11px;
-      color: var(--accent-dark);
-      font-weight: 700
-    }
-
-    .sv-upload span {
-      font-size: 24px
-    }
-
-    /* step 2 visual — analysis breakdown */
-    .sv-analysis {
-      display: flex;
-      flex-direction: column;
-      gap: 6px
-    }
-
-    .sv-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 7px 11px;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      font-size: 11px;
-      font-weight: 600
-    }
-
-    .sv-check {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #F97316, #c2410c);
-      color: #fff;
-      font-size: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800
-    }
-
-    /* step 3 visual — before/after */
-    .sv-ba {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 8px;
-      align-items: center
-    }
-
-    .sv-ba-card {
-      border-radius: 12px;
-      padding: 12px;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 6px
-    }
-
-    .sv-ba-label {
-      font-size: 9px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      color: var(--text-3)
-    }
-
-    .sv-ba-rect {
-      height: 52px;
-      border-radius: 7px;
-      background: var(--bg2)
-    }
-
-    .sv-ba-ref .sv-ba-rect {
-      background: linear-gradient(135deg, #1a1a2e, #16213e)
-    }
-
-    .sv-ba-new .sv-ba-rect {
-      background: linear-gradient(135deg, #fff5f0, #ffe0d0)
-    }
-
-    .sv-ba-lines {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-top: 4px
-    }
-
-    .sv-ba-line {
-      height: 4px;
-      border-radius: 2px;
-      background: var(--border)
-    }
-
-    .sv-ba-ref .sv-ba-line {
-      background: rgba(255, 255, 255, .25)
-    }
-
-    .sv-ba-new .sv-ba-line {
-      background: var(--accent-mid)
-    }
-
-    .sv-ba-arrow {
-      font-size: 18px;
-      color: var(--accent);
-      font-weight: 700
     }
 
     /* ── TWO MODES ── */
@@ -1314,17 +1124,43 @@
         grid-template-columns: 1fr
       }
 
+      .steps-simple.steps{gap:12px}
+      .steps-simple .step-card:not(:last-child):after{display:none}
+
       .nav-links {
-        display: none
+        gap: 14px
       }
+    }
 
-      .nav-hamburger {
-        display: flex
+    .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;border:none;background:none;cursor:pointer;padding:0;flex-shrink:0}
+    .nav-toggle span{display:block;width:100%;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+    nav.nav-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    nav.nav-open .nav-toggle span:nth-child(2){opacity:0}
+    nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:860px){
+      .nav-toggle{display:flex}
+      nav{height:62px;overflow:hidden}
+      nav.nav-open{height:auto;max-height:calc(100vh - 62px);overflow-y:auto;background:#fff;backdrop-filter:none;align-items:flex-start}
+      nav.nav-open .nav-inner{height:auto;min-height:62px}
+      .nav-inner{flex-wrap:wrap;align-items:flex-start}
+      .nav-toggle{height:62px;display:flex;align-items:center;align-self:flex-start;flex-shrink:0}
+      .nav-logo{height:82px;display:flex;align-items:center;align-self:flex-start;flex-shrink:0;overflow:hidden}
+      .nav-logo img{height:80px !important}
+      .nav-links,.nav-cta-group{
+        flex-basis:100%;width:100%;
+        flex-direction:column;align-items:stretch;gap:0;
+        opacity:0;transition:opacity .2s ease;
       }
-
-      .nav-cta-desktop {
-        display: none
-      }
+      nav.nav-open .nav-links,nav.nav-open .nav-cta-group{opacity:1}
+      .nav-links{padding-top:8px;order:1}
+      .nav-cta-group{order:2}
+      .nav-links>a,.nav-links>.nav-dropdown{width:100%}
+      .nav-links>a{padding:14px 0;border-bottom:1px solid var(--border)}
+      .nav-dropdown-btn{width:100%;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border)}
+      .nav-dropdown-menu{position:static;opacity:1;transform:none;pointer-events:all;box-shadow:none;border:none;display:none;width:100%;min-width:0;margin-bottom:8px}
+      .nav-dropdown.open .nav-dropdown-menu{display:block}
+      .nav-cta-group{flex-direction:row;gap:10px;padding:4px 0 20px}
+      .nav-cta-group>a{flex:1;text-align:center;padding:10px 12px}
     }
   </style>
 </head>
@@ -1332,98 +1168,7 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-logo" href="index.html">
-        <img src="assets/logo/Nixi-logo-trans.webp" alt="Nixi – AI Ad Generator" style="height:100px;width:auto">
-      </a>
-      <div class="nav-links">
-        <div class="nav-dropdown" id="featDropdown">
-          <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="featDropBtn">
-            Features
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
-              style="width:11px;height:11px;transition:transform .2s" id="featChevron">
-              <path d="M4 6l4 4 4-4" />
-            </svg>
-          </button>
-          <div class="nav-dropdown-menu" id="featMenu" role="menu">
-            <a href="index.html" class="nav-dropdown-item" role="menuitem">
-              <div class="ndi-icon">✦</div>
-              <div>
-                <div class="ndi-title">Create Ad</div>
-                <div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div>
-              </div>
-            </a>
-            <a href="clone.html" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">
-              <div class="ndi-icon">⧉</div>
-              <div>
-                <div class="ndi-title">Ad Clone</div>
-                <div class="ndi-sub">Clone any ad's structure for your brand</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <a href="index.html#brandsense">Brand Sense</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#pricing">Pricing</a>
-      </div>
-      <div class="nav-cta-desktop">
-        <a href="https://app.nixiads.com" target="_blank"
-          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s"
-          onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Login</a>
-        <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary" style="padding:8px 18px">Try Now
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
-            <path d="M3 8h10M9 4l4 4-4 4" />
-          </svg>
-        </a>
-      </div>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <!-- Mobile Nav Drawer -->
-    <div class="nav-mobile-drawer" id="navMobileDrawer">
-      <button class="mob-feat-btn" id="mobFeatBtn" aria-expanded="false">
-        Features
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
-          style="width:11px;height:11px;transition:transform .2s">
-          <path d="M4 6l4 4 4-4" />
-        </svg>
-      </button>
-      <div class="mob-feat-menu" id="mobFeatMenu">
-        <a href="index.html" class="mob-feat-item">
-          <div class="ndi-icon">✦</div>
-          <div>
-            <div class="ndi-title">Create Ad</div>
-            <div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div>
-          </div>
-        </a>
-        <a href="clone.html" class="mob-feat-item" style="background:var(--bg2)">
-          <div class="ndi-icon">⧉</div>
-          <div>
-            <div class="ndi-title">Ad Clone</div>
-            <div class="ndi-sub">Clone any ad's structure for your brand</div>
-          </div>
-        </a>
-      </div>
-      <div class="mobile-divider"></div>
-      <a href="index.html#brandsense">Brand Sense</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#pricing">Pricing</a>
-      <div class="mobile-divider"></div>
-      <div class="nav-mobile-cta">
-        <a href="https://app.nixiads.com" target="_blank"
-          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s">Login</a>
-        <a href="https://app.nixiads.com" target="_blank"
-          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s"
-          onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Try Now
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px">
-            <path d="M3 8h10M9 4l4 4-4 4" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </nav>
+  <div id="site-header"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1432,23 +1177,23 @@
         <!-- Left -->
         <div>
           <div class="hero-tag" style="margin-bottom:20px"><span></span>Ad Clone</div>
-          <h1
-            style="font-size:clamp(42px,5.5vw,68px);font-weight:700;letter-spacing:-2.5px;line-height:1.05;margin-bottom:20px">
+          <h1>
             Clone the structure.<br>Keep <span style="color:var(--accent)">your brand.</span>
           </h1>
           <p style="font-size:16px;color:var(--text-2);line-height:1.75;max-width:420px;margin-bottom:32px">
             See an ad with a layout you love? Upload it. Nixi reads the composition, visual hierarchy, and text
-            structure — then rebuilds it with your product, your copy, and your brand's visual DNA.
+            structure - then rebuilds it with your product, your copy, and your brand's visual DNA.
           </p>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:28px">
             <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary"
-              style="padding:13px 28px;font-size:14px">
+              style="padding:15px 32px;font-size:15px">
               Try Now
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
-                style="width:14px;height:14px">
+                style="width:15px;height:15px">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>
             </a>
+            <a href="book-a-demo.html" class="btn-demo" style="padding:15px 32px;font-size:15px">Book a Demo</a>
           </div>
           <div style="display:flex;gap:20px;flex-wrap:wrap">
             <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text-2);font-weight:500">
@@ -1469,7 +1214,7 @@
           </div>
         </div>
 
-        <!-- Right — clone visual with real images -->
+        <!-- Right - clone visual with real images -->
         <div class="clone-visual">
           <div class="cv-card" id="cvCard">
             <div class="cv-topbar">
@@ -1536,127 +1281,131 @@
     </div>
   </section>
 
+  <!-- AD CLONE DETAIL -->
+  <section style="padding:96px 0;background:var(--bg2)" id="adclone">
+    <div class="container">
+      <div class="sh reveal">
+        <h2>Ad Clone</h2>
+        <p>See an ad structure you love? Upload it. Nixi extracts the composition and rebuilds it entirely for your
+          brand.</p>
+      </div>
+      <div class="adclone-grid reveal">
+        <!-- Left: image pair -->
+        <div class="adclone-images">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div
+              style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3)">
+              Reference ad</div>
+            <div
+              style="border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.08);aspect-ratio:3/4">
+              <img src="assets/clone/clone-input1.webp" alt="Reference ad uploaded to Ad Clone"
+                style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+          </div>
+          <div
+            style="width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);flex-shrink:0">
+            →</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div
+              style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)">
+              Your brand</div>
+            <div
+              style="border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.08);aspect-ratio:3/4">
+              <img src="assets/clone/clone-output2.webp" alt="Ad cloned for your brand by Nixi"
+                style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+          </div>
+        </div>
+        <!-- Right: copy -->
+        <div>
+          <h3
+            style="font-size:clamp(24px,3vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:16px">
+            Clone the structure.<br>Keep <span style="color:var(--accent)">your brand.</span></h3>
+          <p style="font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:28px">Nixi reads the composition,
+            visual hierarchy, and text placement of any reference ad - then rebuilds it from scratch using your product,
+            your copy, and your Visual DNA. No design skills needed.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)">
+              <span
+                style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">✓</span>
+              Works on competitor ads from Facebook Ads Library
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)">
+              <span
+                style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">✓</span>
+              Scale your own winning ad formats across products
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)">
+              <span
+                style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">✓</span>
+              Zero prompt writing - just upload and go
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Ad Clone section */
+    .adclone-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 56px
+    }
+
+    .adclone-images {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: center
+    }
+
+    @media(max-width:768px) {
+      .adclone-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .adclone-images {
+        max-width: 480px;
+        margin: 0 auto
+      }
+    }
+  </style>
+
   <!-- HOW IT WORKS -->
   <section class="hiw" id="how">
     <div class="container">
       <div class="sh reveal">
         <div class="sh-tag">How it works</div>
         <h2>Three steps. One cloned ad.</h2>
-        <p>Nixi doesn't copy the ad — it learns its structure and rebuilds it from the ground up using your brand.</p>
+        <p>No brief, no designer, no waiting.</p>
       </div>
-      <div class="steps">
-
+      <div class="steps steps-simple">
         <div class="step-card reveal">
-          <div class="step-visual">
-            <div class="sv-upload">
-              <span>⧉</span>
-              Upload a reference ad
-              <div style="font-size:10px;font-weight:400;color:var(--text-3);margin-top:2px">Any ad you've seen or made
-              </div>
-            </div>
-          </div>
+          <div class="step-num">01</div>
           <div class="step-body">
-            <div class="step-num">1</div>
-            <h3>Upload any ad</h3>
-            <p>Drop in a screenshot of any ad — one you've run before, one you admire from a competitor, or one you
-              saved from your feed. A single image is all Nixi needs.</p>
+            <h3>Upload your product</h3>
+            <p>Drop in a product photo. Nixi reads your product and brand automatically.</p>
           </div>
         </div>
-
         <div class="step-card reveal">
-          <div class="step-visual">
-            <div class="sv-analysis">
-              <div class="sv-row">Layout type <div class="sv-check">✓</div>
-              </div>
-              <div class="sv-row">Visual hierarchy <div class="sv-check">✓</div>
-              </div>
-              <div class="sv-row">Composition logic <div class="sv-check">✓</div>
-              </div>
-              <div class="sv-row">Typography style <div class="sv-check">✓</div>
-              </div>
-              <div class="sv-row">Text placement <div class="sv-check">✓</div>
-              </div>
-            </div>
-          </div>
+          <div class="step-num">02</div>
           <div class="step-body">
-            <div class="step-num">2</div>
-            <h3>Nixi reads the structure</h3>
-            <p>Nixi analyses the ad's composition — where the eye lands first, how the product sits in the frame, the
-              depth of field, typography weight, and how text zones are arranged. Not what it looks like. How it works.
-            </p>
+            <h3>Upload a reference ad</h3>
+            <p>Any ad you've seen or run - yours or a competitor's. Nixi reads its structure.</p>
           </div>
         </div>
-
         <div class="step-card reveal">
-          <div class="step-visual">
-            <div class="sv-ba">
-              <div class="sv-ba-card sv-ba-ref">
-                <div class="sv-ba-label">Reference</div>
-                <div class="sv-ba-rect"></div>
-                <div class="sv-ba-lines">
-                  <div class="sv-ba-line" style="width:80%"></div>
-                  <div class="sv-ba-line" style="width:55%"></div>
-                </div>
-              </div>
-              <div class="sv-ba-arrow">→</div>
-              <div class="sv-ba-card sv-ba-new">
-                <div class="sv-ba-label">Your brand</div>
-                <div class="sv-ba-rect"></div>
-                <div class="sv-ba-lines">
-                  <div class="sv-ba-line" style="width:80%"></div>
-                  <div class="sv-ba-line" style="width:55%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="step-num">03</div>
           <div class="step-body">
-            <div class="step-num">3</div>
             <h3>Rebuilds it for your brand</h3>
-            <p>The same structure, rebuilt from scratch. Your product in the hero position. Your brand's visual DNA —
-              palette, lighting, styling — in every pixel. Fresh copy that matches the original's tone and length.</p>
+            <p>Same structure, your product and brand DNA in every pixel. Ready to run.</p>
           </div>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TWO MODES -->
-  <section class="modes" id="modes">
-    <div class="container">
-      <div class="sh reveal">
-        <div class="sh-tag">Two clone modes</div>
-        <h2>Your ads. Or theirs.</h2>
-        <p>Nixi handles both intelligently — knowing what to carry forward and what to replace in each case.</p>
-      </div>
-      <div class="modes-grid">
-
-        <div class="mode-card featured reveal">
-          <div class="mode-icon">📷</div>
-          <h3>Clone your own ad</h3>
-          <p>Found a format that worked? Repurpose it for a new product, a seasonal variant, or a different format —
-            without rebuilding from scratch.</p>
-          <div class="mode-list">
-            <div class="mode-list-item">Carries forward faces, models, and brand styling as structural elements</div>
-            <div class="mode-list-item">Adapts existing copy to the new product — same tone, same length</div>
-            <div class="mode-list-item">Preserves the exact number and placement of text elements</div>
-            <div class="mode-list-item">Ideal for scaling a winning format across your product range</div>
-          </div>
-        </div>
-
-        <div class="mode-card reveal">
-          <div class="mode-icon">🔍</div>
-          <h3>Clone a competitor's ad</h3>
-          <p>See a layout performing well for a competitor? Extract the compositional structure — and none of their
-            brand identity.</p>
-          <div class="mode-list">
-            <div class="mode-list-item">Extracts layout, hierarchy, depth, and typography — nothing else</div>
-            <div class="mode-list-item">No faces, no logos, no competitor brand elements carried over</div>
-            <div class="mode-list-item">All copy freshly written for your brand and product</div>
-            <div class="mode-list-item">Output looks like it was built for your brand from day one</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1674,7 +1423,7 @@
         <div class="what-card reveal">
           <div class="what-icon">⬚</div>
           <h4>Layout type</h4>
-          <p>The spatial arrangement of the ad — whether it's a single product hero, a two-panel split, editorial
+          <p>The spatial arrangement of the ad - whether it's a single product hero, a two-panel split, editorial
             portrait, flat-lay, or infographic structure.</p>
           <span class="what-badge">Cloned from reference</span>
         </div>
@@ -1706,7 +1455,7 @@
         <div class="what-card protected reveal">
           <div class="what-icon" style="background:#fff0e8">🎨</div>
           <h4>Background & environment</h4>
-          <p>All backgrounds, settings, and props come from your brand's Visual DNA — never the reference. The new ad
+          <p>All backgrounds, settings, and props come from your brand's Visual DNA - never the reference. The new ad
             lives in your brand's visual world, not theirs.</p>
           <span class="what-badge protected">Adapted to your brand</span>
         </div>
@@ -1715,7 +1464,7 @@
           <div class="what-icon" style="background:#fff0e8">✏️</div>
           <h4>All copy</h4>
           <p>Every word is freshly written for your product and your brand's tone of voice. Matching the original's
-            length, energy, and typographic weight — but entirely yours.</p>
+            length, energy, and typographic weight - but entirely yours.</p>
           <span class="what-badge protected">Replaced with your brand</span>
         </div>
 
@@ -1741,7 +1490,7 @@
             </svg>
           </button>
           <div class="faq-a">
-            Ad Clone reads structural and compositional signals only — the layout type, visual hierarchy, where the eye
+            Ad Clone reads structural and compositional signals only - the layout type, visual hierarchy, where the eye
             lands first, depth of field behaviour, shadow treatment, typography style (font weight, case, tracking, size
             relative to frame), and text zone placement. It does not copy any visual content, brand colours,
             backgrounds, product imagery, or copy from the reference ad.
@@ -1756,7 +1505,7 @@
             </svg>
           </button>
           <div class="faq-a">
-            Yes. When you upload a competitor ad, Nixi extracts the composition blueprint only — layout, hierarchy,
+            Yes. When you upload a competitor ad, Nixi extracts the composition blueprint only - layout, hierarchy,
             depth, and typography treatment. Nothing brand-specific is carried over: no faces, no logos, no brand names,
             no background environments, no product packaging. Every piece of copy is freshly written for your brand and
             product. The output looks like it was conceived for your brand from day one.
@@ -1771,7 +1520,7 @@
             </svg>
           </button>
           <div class="faq-a">
-            With Canva you're working from a template — you still have to place the product, write the copy, pick the
+            With Canva you're working from a template - you still have to place the product, write the copy, pick the
             colours, and make every design decision yourself. Ad Clone does all of that automatically. It reads what
             makes the reference ad work compositionally, then rebuilds the entire ad using your product, your brand's
             visual DNA (palette, lighting, styling), and freshly generated copy. No design skills or prompt writing
@@ -1779,65 +1528,9 @@
           </div>
         </div>
 
-        <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">
-            Will the cloned ad look like a copy of the original?
-            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 6l4 4 4-4" />
-            </svg>
-          </button>
-          <div class="faq-a">
-            No. The cloned ad shares the same compositional structure as the reference — the same layout logic, visual
-            hierarchy, and text arrangement — but everything visible is entirely different. The product, background,
-            colour palette, lighting, styling, and all copy are generated fresh for your brand. A viewer familiar with
-            the reference ad would not recognise any connection.
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">
-            What file formats can I upload as a reference ad?
-            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 6l4 4 4-4" />
-            </svg>
-          </button>
-          <div class="faq-a">
-            You can upload any JPG, PNG, or WebP image — including screenshots taken directly from Facebook Ads Library,
-            Instagram, or your own Meta Ads Manager. There's no need for a high-resolution source; a standard screenshot
-            is sufficient for Nixi to read the composition.
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">
-            Can I clone my own past ads for a different product?
-            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 6l4 4 4-4" />
-            </svg>
-          </button>
-          <div class="faq-a">
-            Yes — and this is one of the most powerful use cases. If you've found a format that performs well for one
-            product, upload it as the reference and select a new product. Nixi carries forward your brand's visual
-            treatment, faces, and styling as structural elements, adapts the copy for the new product, and preserves the
-            exact number and placement of text elements. It's the fastest way to scale a winning format across your
-            product range.
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">
-            Does Ad Clone work for both square and vertical ad formats?
-            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 6l4 4 4-4" />
-            </svg>
-          </button>
-          <div class="faq-a">
-            Yes. Ad Clone supports all Meta and Instagram formats — Square (1:1), Portrait (4:5 and 2:3), and Landscape
-            (1.91:1). You choose the output format during the flow. Nixi adapts the cloned composition to the selected
-            format's aspect ratio and text-safe zones automatically.
-          </div>
-        </div>
-
+      </div>
+      <div style="max-width:760px;margin:24px auto 0;text-align:center">
+        <a href="faq.html" class="btn-demo" style="display:inline-flex;align-items:center;gap:6px">View all FAQs →</a>
       </div>
     </div>
   </section>
@@ -1852,41 +1545,22 @@
       <p style="font-size:16px;color:#666;max-width:420px;margin:0 auto 32px;line-height:1.7">
         Don't start from a blank canvas. Clone the structure. Make it yours. Launch it today.
       </p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap">
         <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary"
-          style="padding:15px 32px;font-size:15px">
+          style="padding:12px 24px;font-size:14px;white-space:nowrap">
           Try Now
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg>
         </a>
+        <a href="book-a-demo.html" class="btn-demo" style="padding:12px 24px;font-size:14px;white-space:nowrap">Book a Demo</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <a class="nav-logo" href="index.html" style="text-decoration:none">
-        <img src="assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">
-      </a>
-      <div class="footer-links">
-        <a href="pages/privacy-policy.html">Privacy Policy</a>
-        <a href="pages/terms-of-use.html">Terms of Use</a>
-        <a href="pages/refund-policy.html">Refund Policy</a>
-        <a href="blogs/index.html">Blogs</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/nixi_ads" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="assets/Instagram_icon.png" alt="Instagram" width="24" height="24">
-        </a>
-        <a href="https://www.linkedin.com/company/nixi-ads" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <img src="assets/linkedin.png" alt="LinkedIn" width="24" height="24">
-        </a>
-      </div>
-      <div style="font-size:12px;color:var(--text-3)">© <span id="copy-year"></span> Nixi. All rights reserved.</div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <script src="components/loader.js" data-root=""></script>
 
   <script>
     // ── REVEAL ON SCROLL ──────────────────────────────────────────────────────
@@ -1894,23 +1568,6 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
     }, { threshold: .1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-    // ── FEATURES DROPDOWN ────────────────────────────────────────────────────
-    (function () {
-      var dd = document.getElementById('featDropdown');
-      var btn = document.getElementById('featDropBtn');
-      if (!dd || !btn) return;
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var open = dd.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', function () {
-        dd.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-      dd.addEventListener('click', function (e) { e.stopPropagation(); });
-    })();
 
     // ── HERO CARD ANIMATION ──────────────────────────────────────────────────
     (function () {
@@ -1938,15 +1595,15 @@
             setTimeout(function (idx, r) {
               r.className = 'cv-analysis-row done';
               r.innerHTML = '<div class="cv-dot"></div><span>' + STEPS[idx] + '</span><span style="margin-left:auto;font-size:10px;color:#22c55e;font-weight:700">✓</span>';
-            }.bind(null, i, row), 340);
-            i++; setTimeout(next, 420);
-          } else { setTimeout(done, 300); }
+            }.bind(null, i, row), 210);
+            i++; setTimeout(next, 260);
+          } else { setTimeout(done, 190); }
         }
         next();
       }
 
       function runCycle() {
-        // Phase 1 - show upload for 1.2s
+        // Phase 1 - show upload
         showPhase(phase1);
         setTimeout(function () {
           // Phase 2 - analysis
@@ -1956,13 +1613,13 @@
             showPhase(phase3);
             setTimeout(function () {
               // loop
-              setTimeout(runCycle, 1200);
-            }, 3000);
+              setTimeout(runCycle, 740);
+            }, 1850);
           });
-        }, 1200);
+        }, 740);
       }
 
-      setTimeout(runCycle, 600);
+      setTimeout(runCycle, 400);
     })();
 
     // ── FAQ ACCORDION ────────────────────────────────────────────────────────
@@ -1982,39 +1639,6 @@
     });
 
     document.getElementById('copy-year').textContent = new Date().getFullYear();
-
-    // ── MOBILE HAMBURGER ──────────────────────────────────────────────────────
-    const hamburger = document.getElementById('navHamburger');
-    const drawer = document.getElementById('navMobileDrawer');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = drawer.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      if (!isOpen) {
-        mobFeatMenu.classList.remove('open');
-        mobFeatBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    drawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobFeatMenu.classList.remove('open');
-        mobFeatBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // ── MOBILE FEATURES ACCORDION ─────────────────────────────────────────────
-    const mobFeatBtn = document.getElementById('mobFeatBtn');
-    const mobFeatMenu = document.getElementById('mobFeatMenu');
-
-    mobFeatBtn.addEventListener('click', () => {
-      const isOpen = mobFeatMenu.classList.toggle('open');
-      mobFeatBtn.setAttribute('aria-expanded', String(isOpen));
-    });
   </script>
 </body>
 

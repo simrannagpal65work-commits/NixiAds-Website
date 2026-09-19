@@ -1,0 +1,50 @@
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="{{ROOT}}index.html">
+      <img src="{{ROOT}}assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:100px;width:auto">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <div class="nav-dropdown" id="adsDropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="adsDropBtn">
+          Ads Studio
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4" /></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="adsMenu" role="menu">
+          <a href="{{ROOT}}ads-studio.html" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">
+            <div class="ndi-icon">✦</div>
+            <div><div class="ndi-title">Create Ad</div><div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div></div>
+          </a>
+          <a href="{{ROOT}}clone.html" class="nav-dropdown-item" role="menuitem">
+            <div class="ndi-icon">⧉</div>
+            <div><div class="ndi-title">Ad Clone</div><div class="ndi-sub">Clone any ad's structure for your brand</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="nav-dropdown" id="catDropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="catDropBtn">
+          Catalog Studio
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4" /></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="catMenu" role="menu">
+          <a href="{{ROOT}}catalog-studio.html" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">
+            <div class="ndi-icon">✦</div>
+            <div><div class="ndi-title">Catalog Photos</div><div class="ndi-sub">AI-generated lifestyle product shots</div></div>
+          </a>
+          <a href="{{ROOT}}catalog-videos.html" class="nav-dropdown-item" role="menuitem">
+            <div class="ndi-icon">⧉</div>
+            <div><div class="ndi-title">Catalog Videos</div><div class="ndi-sub">Turn any image into motion</div></div>
+          </a>
+        </div>
+      </div>
+      <a href="{{ROOT}}pricing.html">Pricing</a>
+      <a href="{{ROOT}}faq.html">FAQ</a>
+    </div>
+    <div class="nav-cta-group">
+      <a href="{{ROOT}}book-a-demo.html" class="btn-demo">Book a Demo</a>
+      <a href="https://app.nixiads.com" target="_blank" class="btn-primary">Try Now</a>
+    </div>
+  </div>
+</nav>

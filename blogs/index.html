@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Blogs – Nixi | AI Ad Creative Insights for D2C Brands</title>
+  <title>Blogs – Nixi | AI Ad Creative & Product Photography Guides for D2C</title>
   <meta name="description"
-    content="Practical guides on Meta ad creative, brand visual identity, and AI ad generation for D2C brands and performance marketers." />
+    content="Insights on Meta ad creative, AI product photography, catalog generation, brand visual identity, and performance marketing for D2C brands." />
   <link rel="canonical" href="https://nixiads.com/blogs/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nixiads.com/blogs/" />
-  <meta property="og:title" content="Blogs – Nixi | AI Ad Creative Insights" />
+  <meta property="og:title" content="Blogs – Nixi | AI Creative & Product Photography" />
   <meta property="og:description"
-    content="Practical guides on Meta ad creative, brand visual identity, and AI ad generation for D2C brands." />
+    content="Learn how to generate high-performing ads and AI product photos. Guides on creative strategy, catalog photography, and brand identity." />
   <meta property="og:image" content="https://nixiads.com/assets/carousel-ad1.webp" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
@@ -58,205 +58,6 @@
       margin: 0 auto;
       padding: 0 28px
     }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      height: 62px;
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, .9);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(235, 235, 235, .6)
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 28px
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-2);
-      text-decoration: none;
-      transition: color .2s
-    }
-
-    .nav-links a:hover {
-      color: var(--text)
-    }
-
-    /* hamburger + mobile drawer */
-    .nav-cta-desktop {
-      display: flex;
-      align-items: center;
-      gap: 10px
-    }
-
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      border-radius: 6px;
-      transition: background .2s
-    }
-
-    .nav-hamburger:hover {
-      background: var(--bg2)
-    }
-
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: transform .25s, opacity .25s
-    }
-
-    .nav-hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg)
-    }
-
-    .nav-hamburger.open span:nth-child(2) {
-      opacity: 0
-    }
-
-    .nav-hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg)
-    }
-
-    .nav-mobile-drawer {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      padding: 12px 16px 16px;
-      border-top: 1px solid var(--border);
-      background: rgba(255, 255, 255, .97);
-      backdrop-filter: blur(20px);
-      position: absolute;
-      top: 62px;
-      left: 0;
-      right: 0;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-      z-index: 199
-    }
-
-    .nav-mobile-drawer.open {
-      display: flex
-    }
-
-    .nav-mobile-drawer a {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-2);
-      text-decoration: none;
-      padding: 10px 8px;
-      border-radius: 8px;
-      transition: background .15s, color .15s
-    }
-
-    .nav-mobile-drawer a:hover {
-      background: var(--bg2);
-      color: var(--text)
-    }
-
-    .mobile-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 4px 0
-    }
-
-    .nav-mobile-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 8px 0
-    }
-
-    .mob-feat-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-2);
-      padding: 10px 8px;
-      border-radius: 8px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      transition: background .15s, color .15s
-    }
-
-    .mob-feat-btn:hover { background: var(--bg2); color: var(--text) }
-    .mob-feat-btn[aria-expanded="true"] { color: var(--text) }
-    .mob-feat-btn[aria-expanded="true"] svg { transform: rotate(180deg) }
-
-    .mob-feat-menu {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      padding: 4px 0 4px 8px
-    }
-
-    .mob-feat-menu.open { display: flex }
-
-    .mob-feat-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background .15s
-    }
-
-    .mob-feat-item:hover { background: var(--bg2) }
-
-    .ndi-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent-mid));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0
-    }
-
-    .ndi-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3 }
-    .ndi-sub { font-size: 11px; color: var(--text-2); margin-top: 2px; line-height: 1.4 }
 
     .btn {
       display: inline-flex;
@@ -413,82 +214,11 @@
       gap: 5px
     }
 
-    footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 32px 28px
-    }
-
-    .footer-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      text-align: center
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center
-    }
-
-    .footer-links a {
-      font-size: 12px;
-      color: var(--text-2);
-      text-decoration: none
-    }
-
-    .footer-links a:hover {
-      color: var(--text)
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 14px;
-      align-items: center
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      opacity: .6;
-      transition: opacity .2s
-    }
-
-    .footer-social a:hover {
-      opacity: 1
-    }
-
     @media(max-width:900px) {
       .blog-grid {
         grid-template-columns: 1fr 1fr
       }
-
-      .nav-links {
-        display: none
-      }
-
-      .nav-cta-desktop {
-        display: none
-      }
-
-      .nav-hamburger {
-        display: flex
-      }
     }
-    .nav-links{align-items:center}
-    .nav-dropdown{position:relative}
-    .nav-dropdown-btn{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:500;color:var(--text-2);background:none;border:none;cursor:pointer;padding:0;font-family:inherit;transition:color .2s;line-height:normal}
-    .nav-dropdown-btn:hover,.nav-dropdown.open .nav-dropdown-btn{color:var(--text)}
-    .nav-dropdown.open #featChevron{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:-16px;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:8px;min-width:260px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:300}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;transform:translateY(0);pointer-events:all}
-    .nav-dropdown-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;text-decoration:none;color:var(--text);transition:background .15s}
-    .nav-dropdown-item:hover{background:var(--bg2)}
 
     @media(max-width:600px) {
       .blog-grid {
@@ -504,100 +234,30 @@
 
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-logo" href="../index.html">
-        <img src="../assets/logo/Nixi-logo-trans.webp" alt="Nixi – AI Ad Generator" style="height:100px;width:auto">
-      </a>
-      <div class="nav-links">
-        <div class="nav-dropdown" id="featDropdown">
-          <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" id="featDropBtn">
-            Features
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;transition:transform .2s" id="featChevron"><path d="M4 6l4 4 4-4"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" id="featMenu" role="menu">
-            <a href="../index.html" class="nav-dropdown-item" role="menuitem">
-              <div class="ndi-icon">✦</div>
-              <div><div class="ndi-title">Create Ad</div><div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div></div>
-            </a>
-            <a href="../clone.html" class="nav-dropdown-item" role="menuitem">
-              <div class="ndi-icon">⧉</div>
-              <div><div class="ndi-title">Ad Clone</div><div class="ndi-sub">Clone any ad's structure for your brand</div></div>
-            </a>
-          </div>
-        </div>
-        <a href="../index.html#brandsense">Brand Sense</a>
-        <a href="../index.html#faq">FAQ</a>
-        <a href="../index.html#pricing">Pricing</a>
-        <a href="index.html" style="color:var(--accent)">Blogs</a>
-      </div>
-      <div class="nav-cta-desktop">
-        <a href="https://app.nixiads.com" target="_blank"
-          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s"
-          onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Login</a>
-        <a href="https://app.nixiads.com" target="_blank" class="btn btn-primary" style="padding:8px 18px">Try Now
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
-            <path d="M3 8h10M9 4l4 4-4 4" />
-          </svg></a>
-      </div>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <!-- Mobile Nav Drawer -->
-    <div class="nav-mobile-drawer" id="navMobileDrawer">
-      <button class="mob-feat-btn" id="mobFeatBtn" aria-expanded="false">
-        Features
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;transition:transform .2s"><path d="M4 6l4 4 4-4"/></svg>
-      </button>
-      <div class="mob-feat-menu" id="mobFeatMenu">
-        <a href="../index.html" class="mob-feat-item">
-          <div class="ndi-icon">✦</div>
-          <div><div class="ndi-title">Create Ad</div><div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div></div>
-        </a>
-        <a href="../clone.html" class="mob-feat-item">
-          <div class="ndi-icon">⧉</div>
-          <div><div class="ndi-title">Ad Clone</div><div class="ndi-sub">Clone any ad's structure for your brand</div></div>
-        </a>
-      </div>
-      <div class="mobile-divider"></div>
-      <a href="../index.html#brandsense">Brand Sense</a>
-      <a href="../index.html#faq">FAQ</a>
-      <a href="../index.html#pricing">Pricing</a>
-      <a href="index.html" style="color:var(--accent)">Blogs</a>
-      <div class="mobile-divider"></div>
-      <div class="nav-mobile-cta">
-        <a href="https://app.nixiads.com" target="_blank"
-          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#F97316,#c2410c) border-box;color:#F97316;transition:opacity .2s">Login</a>
-        <a href="https://app.nixiads.com" target="_blank"
-          style="font-size:13px;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:50px;background:linear-gradient(135deg,#F97316,#c2410c);color:#fff;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s"
-          onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Try Now
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px">
-            <path d="M3 8h10M9 4l4 4-4 4" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </nav>
+  <div id="site-header"></div>
 
   <section class="blog-hero">
     <div class="container">
       <div class="blog-hero-tag">Nixi Blogs</div>
-      <h1>Ad creative insights<br>for D2C brands</h1>
+      <h1>Creative & product photo insights<br>for D2C brands</h1>
       <p>Practical guides on Meta ad strategy, brand identity, and AI-powered creative production.</p>
     </div>
   </section>
 
-  <div class="container">
+  <div class="container" style="margin-top:56px">
+    <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap">
+      <button class="blog-filter active" data-filter="all" style="padding:8px 18px;border-radius:50px;border:1px solid var(--border);background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s">All Articles</button>
+      <button class="blog-filter" data-filter="ads" style="padding:8px 18px;border-radius:50px;border:1px solid var(--border);background:#fff;color:var(--text-2);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s">Ad Studio</button>
+      <button class="blog-filter" data-filter="catalog" style="padding:8px 18px;border-radius:50px;border:1px solid var(--border);background:#fff;color:var(--text-2);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s">Catalog Studio</button>
+    </div>
     <div class="blog-grid">
 
-      <a class="blog-card" href="how-to-create-meta-ads-without-a-designer.html">
-        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fff5f2,#ffe0d6)">📱</div>
+      <a class="blog-card" data-category="ads" href="how-to-create-meta-ads-without-a-designer.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fff5f2,#ffe0d6);background-image:url('https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag">Meta Ads</span>
-          <h2>How to Create Meta Ads Without a Designer</h2>
-          <p>A complete guide for D2C brands — creative strategy, formats, copy frameworks, and the tools that let you
-            produce campaign-ready ads with no design team.</p>
+          <h2>How to Create Meta Ads Without a Designer Using Nixi</h2>
+          <p>A complete guide for D2C brands using Nixi — creative strategy, brand-aware ad formats, copy frameworks, and how to produce campaign-ready ads without a design team.</p>
           <div class="blog-card-footer">
             <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
                 stroke-width="2" style="width:12px;height:12px">
@@ -608,13 +268,12 @@
         </div>
       </a>
 
-      <a class="blog-card" href="what-is-brand-visual-dna.html">
-        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)">🎨</div>
+      <a class="blog-card" data-category="ads" href="what-is-brand-visual-dna.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag">Brand Identity</span>
-          <h2>What Is Brand Visual DNA — And Why It Determines Whether Your Ads Convert</h2>
-          <p>The six visual signals that make your ads instantly recognisable — and how to define, extract, and apply
-            them to every creative you produce.</p>
+          <h2>What Is Brand Visual DNA - And Why Nixi's Brand Sense Matters</h2>
+          <p>The visual signals that make your ads instantly recognizable — and how Nixi's Brand Sense extracts and applies them to every creative automatically.</p>
           <div class="blog-card-footer">
             <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
                 stroke-width="2" style="width:12px;height:12px">
@@ -625,13 +284,12 @@
         </div>
       </a>
 
-      <a class="blog-card" href="instagram-ad-creative-strategy-2026.html">
-        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)">📱</div>
+      <a class="blog-card" data-category="ads" href="instagram-ad-creative-strategy-2026.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff);background-image:url('https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag">Creative Strategy</span>
-          <h2>Instagram Ad Creative in 2026: What Actually Stops the Scroll</h2>
-          <p>A practical guide to Instagram ad creative strategy — what formats work, how to build a hook, when to use
-            AI creatives, and why most brands get this wrong.</p>
+          <h2>Instagram Ad Creative in 2026: Master It With Nixi</h2>
+          <p>A practical guide to Instagram ad creative strategy — what formats work, how to build hooks with Nixi's AI, and why most brands get this wrong.</p>
           <div class="blog-card-footer">
             <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
                 stroke-width="2" style="width:12px;height:12px">
@@ -642,13 +300,12 @@
         </div>
       </a>
 
-      <a class="blog-card" href="best-ai-ad-generators-meta-instagram.html">
-        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#eff6ff,#dbeafe)">⚡</div>
+      <a class="blog-card" data-category="ads" href="best-ai-ad-generators-meta-instagram.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag">Tools</span>
-          <h2>Best AI Ad Generators for Meta and Instagram in 2026</h2>
-          <p>An honest, no-fluff comparison of Nixi, AdCreative.ai, Quickads, Predis, and Canva — what each tool
-            actually does and who it's built for.</p>
+          <h2>Best AI Ad Generators in 2026: Why Nixi Wins</h2>
+          <p>An honest comparison of AI ad tools — what Nixi does better, when to use alternatives, and why brand-aware creative generation matters for D2C.</p>
           <div class="blog-card-footer">
             <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
                 stroke-width="2" style="width:12px;height:12px">
@@ -659,13 +316,12 @@
         </div>
       </a>
 
-      <a class="blog-card" href="how-to-create-product-ads-that-sell.html">
-        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fefce8,#fef9c3)">🛍️</div>
+      <a class="blog-card" data-category="ads" href="how-to-create-product-ads-that-sell.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fefce8,#fef9c3);background-image:url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag">Ad Creative</span>
-          <h2>How to Create Product Ads That Actually Sell</h2>
-          <p>A complete guide to creating product ads for Meta and Instagram — covering ad design, creative strategy,
-            what makes the best ads work, and how to create ads for free or low cost.</p>
+          <h2>How to Create Product Ads That Sell With Nixi</h2>
+          <p>A complete guide to product ads for Meta and Instagram — design principles, creative strategy, what makes ads convert, and how Nixi cuts production time in half.</p>
           <div class="blog-card-footer">
             <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
                 stroke-width="2" style="width:12px;height:12px">
@@ -676,67 +332,188 @@
         </div>
       </a>
 
+      <a class="blog-card" data-category="catalog" href="why-ai-product-photography-changing-ecommerce.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fff0f5,#ffe4ef);background-image:url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Product Photography</span>
+          <h2>Why AI Product Photography Is Changing E-commerce</h2>
+          <p>How AI-generated product photos are replacing traditional photoshoots for D2C brands - quality, cost savings, speed, and why it matters for your catalog.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">10 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="from-flatlay-to-lifestyle-generate-model-photos.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Catalog Studio</span>
+          <h2>From Flatlay to Lifestyle: Generate Model Photos From Any Image</h2>
+          <p>How to transform product flatlays into professional on-model photos - including how to choose models, scenes, poses, and why it matters for conversion.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">13 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="scaling-catalog-amazon-shopify-nixi.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#faf5ff,#f3e8ff);background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Best Practices</span>
+          <h2>Scaling Your Catalog: AI Photos for Amazon, Shopify & Your Store</h2>
+          <p>A practical guide to generating consistent, high-quality product photos at scale - integrating with Amazon, Shopify, and D2C sites, and maintaining brand consistency.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">9 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="ads" href="why-your-product-ads-arent-converting-with-nixi.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);background-image:url('https://images.pexels.com/photos/3778318/pexels-photo-3778318.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Ad Strategy</span>
+          <h2>Why Your Product Ads Aren't Converting With Nixi</h2>
+          <p>Discover the top reasons D2C brands struggle with ad performance — and how AI-powered ad creation with Nixi eliminates common creative mistakes.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">9 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="ads" href="ab-testing-ad-creatives-meta.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe);background-image:url('https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Testing & Optimization</span>
+          <h2>A/B Testing Ad Creatives: What Actually Works on Meta</h2>
+          <p>Learn how to test ad variations effectively and scale winning creatives using Nixi — insights from running thousands of Meta campaigns.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">11 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="ads" href="psychology-high-converting-ad-copy.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);background-image:url('https://images.pexels.com/photos/3778318/pexels-photo-3778318.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Copywriting</span>
+          <h2>The Psychology Behind High-Converting Ad Copy</h2>
+          <p>Understand the psychological triggers that make ad copy convert — and how Nixi's AI writes headlines and CTAs that actually perform.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">10 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="ads" href="video-vs-static-ads-instagram.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);background-image:url('https://images.pexels.com/photos/3587627/pexels-photo-3587627.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Creative Formats</span>
+          <h2>Video vs Static Ads: Which Format Wins on Instagram</h2>
+          <p>Compare video and static ad performance on Instagram — and discover how Nixi generates both formats from a single product photo.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">9 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="building-consistent-product-photography-style-ai.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);background-image:url('https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Photography</span>
+          <h2>Building a Consistent Product Photography Style with AI</h2>
+          <p>Learn how to maintain visual consistency across your entire catalog using Nixi — without reshooting every product.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">10 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="professional-product-photos-nixi-vs-traditional.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe);background-image:url('https://images.pexels.com/photos/3962632/pexels-photo-3962632.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">ROI & Cost</span>
+          <h2>Professional Product Photos: Nixi vs Traditional Photoshoots</h2>
+          <p>Compare the ROI of AI-generated product photos with traditional studio shoots — cost, speed, and quality analysis for D2C brands.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">13 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="seasonal-catalog-updates-how-often-refresh-nixi.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);background-image:url('https://images.pexels.com/photos/3945684/pexels-photo-3945684.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Catalog Management</span>
+          <h2>Seasonal Catalog Updates: How Often to Refresh With Nixi</h2>
+          <p>Strategy for updating your product catalog seasonally — timing, refresh cadence, and how Nixi makes batch updates effortless.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">12 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="ai-product-photography-dropshipping.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);background-image:url('https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Dropshipping</span>
+          <h2>AI Product Photography for Dropshipping: Quality Without the Cost</h2>
+          <p>How dropshipping brands scale product catalogs with AI photos — cost breakdown, workflow, and real results from brands doing this now.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">10 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card" data-category="catalog" href="platform-specific-product-photos.html">
+        <div class="blog-card-thumb" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe);background-image:url('https://images.pexels.com/photos/3962632/pexels-photo-3962632.jpeg?w=400&h=300&fit=crop');background-size:cover;background-position:center"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Multi-Channel</span>
+          <h2>Platform-Specific Product Photos: Amazon vs Shopify vs TikTok Shop</h2>
+          <p>Each platform requires different photos. Learn how to generate one master set and adapt it for Amazon, Shopify, and TikTok Shop.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-read">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span>
+            <span style="font-size:11px;color:var(--text-3)">11 min read</span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <a href="../index.html" style="text-decoration:none">
-        <img src="../assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">
-      </a>
-      <div class="footer-links">
-        <a href="../pages/privacy-policy.html">Privacy Policy</a>
-        <a href="../pages/terms-of-use.html">Terms of Use</a>
-        <a href="../pages/refund-policy.html">Refund Policy</a>
-        <a href="index.html">Blogs</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/nixi_ads" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="../assets/Instagram_icon.png" alt="Instagram" width="24" height="24">
-        </a>
-        <a href="https://www.linkedin.com/company/nixi-ads" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <img src="../assets/linkedin.png" alt="LinkedIn" width="24" height="24">
-        </a>
-      </div>
-      <div style="font-size:12px;color:var(--text-3)">© <span id="copy-year"></span> Nixi. All rights reserved.</div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <script src="../components/loader.js" data-root="../"></script>
   <script>
-    document.getElementById('copy-year').textContent = new Date().getFullYear();
-
-    const hamburger = document.getElementById('navHamburger');
-    const drawer = document.getElementById('navMobileDrawer');
-    const mobFeatBtn = document.getElementById('mobFeatBtn');
-    const mobFeatMenu = document.getElementById('mobFeatMenu');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = drawer.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      if (!isOpen) { mobFeatMenu.classList.remove('open'); mobFeatBtn.setAttribute('aria-expanded', 'false'); }
-    });
-
-    drawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobFeatMenu.classList.remove('open');
-        mobFeatBtn.setAttribute('aria-expanded', 'false');
+    // Blog filter
+    const filterBtns = document.querySelectorAll('.blog-filter');
+    const blogCards = document.querySelectorAll('.blog-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.style.background = '#fff');
+        filterBtns.forEach(b => b.style.color = 'var(--text-2)');
+        btn.style.background = 'var(--accent)';
+        btn.style.color = '#fff';
+        blogCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
 
-    mobFeatBtn.addEventListener('click', () => {
-      const isOpen = mobFeatMenu.classList.toggle('open');
-      mobFeatBtn.setAttribute('aria-expanded', String(isOpen));
-    });
-    // desktop features dropdown
-    (function() {
-      var dd = document.getElementById('featDropdown');
-      var btn = document.getElementById('featDropBtn');
-      if (!dd || !btn) return;
-      btn.addEventListener('click', function(e) { e.stopPropagation(); var open = dd.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
-      document.addEventListener('click', function() { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
-      dd.querySelectorAll('.nav-dropdown-item').forEach(function(item) { item.addEventListener('click', function() { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
-    })();
   </script>
+</body>
+</html>

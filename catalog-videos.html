@@ -1199,6 +1199,10 @@
       .gallery-layout {
         max-width: 100%
       }
+
+      .gallery-thumbs {
+        max-height: 640px
+      }
     }
 
     @media(max-width:860px) {
@@ -1500,17 +1504,18 @@
       grid-template-columns: 96px 1fr;
       gap: 16px;
       margin-top: 48px;
-      align-items: start;
-      max-width: 480px;
+      align-items: stretch;
+      max-width: 640px;
       margin-left: auto;
-      margin-right: auto
+      margin-right: auto;
+      height: 600px
     }
 
     .gallery-thumbs {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-height: 600px;
+      height: 100%;
       overflow-y: auto;
       padding-right: 8px
     }
@@ -1559,7 +1564,7 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg2);
-      aspect-ratio: 9/12
+      height: 100%
     }
 
     .gallery-player video {
@@ -1572,12 +1577,13 @@
     @media(max-width:900px) {
       .gallery-layout {
         grid-template-columns: 1fr;
-        gap: 16px
+        gap: 16px;
+        height: auto
       }
 
       .gallery-thumbs {
         flex-direction: row;
-        max-height: none;
+        height: auto;
         max-width: 100%;
         overflow-x: auto
       }
@@ -1585,6 +1591,11 @@
       .gallery-thumb {
         width: 80px;
         height: 80px
+      }
+
+      .gallery-player {
+        height: auto;
+        aspect-ratio: 9/12
       }
     }
   </style>
@@ -1854,6 +1865,9 @@
           <div class="gallery-thumb" data-video="assets/catalog_video/Catalog_Video5.mp4">
             <img src="assets/catalog_video/Catalog_Shot5.webp" alt="Video 2">
           </div>
+          <div class="gallery-thumb" data-video="assets/catalog_video/Catalog_Video7.mp4">
+            <img src="assets/catalog_video/Catalog_Shot7.webp" alt="Video 6">
+          </div>
           <div class="gallery-thumb" data-video="assets/catalog_video/Catalog_Video4.mp4">
             <img src="assets/catalog_video/Catalog_Shot4.webp" alt="Video 3">
           </div>
@@ -1863,6 +1877,7 @@
           <div class="gallery-thumb" data-video="assets/catalog_video/Catalog_Video6.mp4">
             <img src="assets/catalog_video/Catalog_Shot6.avif" alt="Video 5">
           </div>
+
         </div>
         <div class="gallery-player">
           <video id="galleryVideo" muted playsinline preload="auto">

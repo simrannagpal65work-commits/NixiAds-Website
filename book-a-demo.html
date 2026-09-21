@@ -1222,7 +1222,7 @@
         submitBtn.textContent = 'Submitting…';
 
         try {
-          const res = await fetch('https://app.nixiads.com/api/demo-requests', {
+          const res = await fetch('https://planecurves-creativeengine-production.up.railway.app/api/demo-requests', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),

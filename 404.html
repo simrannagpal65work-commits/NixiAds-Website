@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Nixi</title>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+
+      // Old bookmarked "/page.html" links now live at "/page/" — redirect there
+      if (/\.html$/.test(path)) {
+        window.location.replace(path.replace(/(?:index)?\.html$/, '/') + search + hash);
+        return;
+      }
+
+      // Missing trailing slash on a page path — add it
+      if (path !== '/' && !/\/$/.test(path)) {
+        window.location.replace(path + '/' + search + hash);
+      }
+    })();
+  </script>
+</head>
+<body></body>
+</html>

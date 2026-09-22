@@ -1,16 +1,11 @@
 /**
  * Nixi component loader — inline template approach.
- * Works on file://, local servers, and production alike.
+ * Works on local servers and production alike.
  *
- * Root-level pages:  <script src="components/loader.js" data-root=""></script>
- * One level deep:    <script src="../components/loader.js" data-root="../"></script>
+ * Usage (any page, any depth): <script src="/components/loader.js"></script>
  */
 (function () {
-  var script = document.currentScript ||
-    (function () { var s = document.getElementsByTagName('script'); return s[s.length - 1]; })();
-
-  var root = script.getAttribute('data-root') || '';
-  if (root !== '' && root.slice(-1) !== '/') root += '/';
+  var root = '/';
 
   /* ── NAV + FOOTER CSS ───────────────────────────────────── */
   var NAV_CSS = [
@@ -92,7 +87,7 @@
   var HEADER_HTML = [
     '<nav>',
     '  <div class="nav-inner">',
-    '    <a class="nav-logo" href="' + root + 'index.html">',
+    '    <a class="nav-logo" href="' + root + '">',
     '      <img src="' + root + 'assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:100px;width:auto">',
     '    </a>',
     '    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">',
@@ -105,11 +100,11 @@
     '          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>',
     '        </button>',
     '        <div class="nav-dropdown-menu" id="adsMenu" role="menu">',
-    '          <a href="' + root + 'ads-studio.html" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">',
+    '          <a href="' + root + 'ads-studio/" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">',
     '            <div class="ndi-icon">✦</div>',
     '            <div><div class="ndi-title">Create Ad</div><div class="ndi-sub">From URL to campaign-ready ad in 2 minutes</div></div>',
     '          </a>',
-    '          <a href="' + root + 'clone.html" class="nav-dropdown-item" role="menuitem">',
+    '          <a href="' + root + 'clone/" class="nav-dropdown-item" role="menuitem">',
     '            <div class="ndi-icon">⧉</div>',
     '            <div><div class="ndi-title">Ad Clone</div><div class="ndi-sub">Clone any ad\'s structure for your brand</div></div>',
     '          </a>',
@@ -121,21 +116,21 @@
     '          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>',
     '        </button>',
     '        <div class="nav-dropdown-menu" id="catMenu" role="menu">',
-    '          <a href="' + root + 'catalog-studio.html" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">',
+    '          <a href="' + root + 'catalog-studio/" class="nav-dropdown-item" role="menuitem" style="background:var(--bg2)">',
     '            <div class="ndi-icon">✦</div>',
     '            <div><div class="ndi-title">Catalog Photos</div><div class="ndi-sub">AI-generated lifestyle product shots</div></div>',
     '          </a>',
-    '          <a href="' + root + 'catalog-videos.html" class="nav-dropdown-item" role="menuitem">',
+    '          <a href="' + root + 'catalog-videos/" class="nav-dropdown-item" role="menuitem">',
     '            <div class="ndi-icon">⧉</div>',
     '            <div><div class="ndi-title">Catalog Videos</div><div class="ndi-sub">Turn any image into motion</div></div>',
     '          </a>',
     '        </div>',
     '      </div>',
-    '      <a href="' + root + 'pricing.html">Pricing</a>',
-    '      <a href="' + root + 'faq.html">FAQ</a>',
+    '      <a href="' + root + 'pricing/">Pricing</a>',
+    '      <a href="' + root + 'faq/">FAQ</a>',
     '    </div>',
     '    <div class="nav-cta-group">',
-    '      <a href="' + root + 'book-a-demo.html" class="btn-demo">Book a Demo</a>',
+    '      <a href="' + root + 'book-a-demo/" class="btn-demo">Book a Demo</a>',
     '      <a href="https://app.nixiads.com" target="_blank" class="btn-primary">Try Now</a>',
     '    </div>',
     '  </div>',
@@ -146,14 +141,14 @@
   var FOOTER_HTML = [
     '<footer>',
     '  <div class="footer-inner">',
-    '    <a class="nav-logo" href="' + root + 'index.html" style="text-decoration:none">',
+    '    <a class="nav-logo" href="' + root + '" style="text-decoration:none">',
     '      <img src="' + root + 'assets/logo/Nixi-logo-trans.webp" alt="Nixi" style="height:90px;width:auto">',
     '    </a>',
     '    <div class="footer-links">',
-    '      <a href="' + root + 'pages/privacy-policy.html">Privacy Policy</a>',
-    '      <a href="' + root + 'pages/terms-of-use.html">Terms of Use</a>',
-    '      <a href="' + root + 'pages/refund-policy.html">Refund Policy</a>',
-    '      <a href="' + root + 'blogs/index.html">Blogs</a>',
+    '      <a href="' + root + 'pages/privacy-policy/">Privacy Policy</a>',
+    '      <a href="' + root + 'pages/terms-of-use/">Terms of Use</a>',
+    '      <a href="' + root + 'pages/refund-policy/">Refund Policy</a>',
+    '      <a href="' + root + 'blogs/">Blogs</a>',
     '    </div>',
     '    <div class="footer-social">',
     '      <a href="https://www.instagram.com/nixi_ads" target="_blank" rel="noopener" aria-label="Instagram">',

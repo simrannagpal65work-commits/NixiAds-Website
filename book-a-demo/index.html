@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Book a Demo – Nixi</title>
+  <meta name="description"
+    content="Book a live demo of Nixi's Ads Studio and Catalog Studio. See how brands generate ads and product photoshoots with AI." />
+  <link rel="canonical" href="https://nixiads.com/book-a-demo/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nixiads.com/book-a-demo.html" />
+  <meta property="og:title" content="Book a Demo – Nixi" />
+  <meta property="og:description" content="Book a live demo of Nixi's Ads Studio and Catalog Studio." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,600;1,600&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --accent: #F97316;
+      --accent-light: #fff7ed;
+      --accent-mid: #fed7aa;
+      --text: #212121;
+      --text-2: #666;
+      --text-3: #aaa;
+      --bg: #fff;
+      --bg2: #fafafa;
+      --border: #ebebeb;
+      --r: 18px
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-top: 62px
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(235, 235, 235, .6)
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1140px;
+      height: 62px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    .nav-logo img {
+      height: 100px;
+      width: auto
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--text)
+    }
+
+    .nav-links a.active {
+      color: var(--text)
+    }
+
+    .nav-cta-group {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .nav-login {
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      color: var(--accent);
+      background: transparent;
+      transition: all .2s
+    }
+
+    .nav-login:hover {
+      border-color: var(--accent)
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all .2s
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249, 115, 22, .45)
+    }
+
+    .btn-demo {
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1.5px solid var(--accent-mid);
+      color: var(--accent);
+      background: var(--accent-light);
+      transition: all .2s
+    }
+
+    .btn-demo:hover {
+      background: var(--accent-mid)
+    }
+
+    .nav-dropdown {
+      position: relative
+    }
+
+    .nav-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      transition: color .2s;
+      vertical-align: middle;
+      line-height: normal
+    }
+
+    .nav-dropdown-btn:hover,
+    .nav-dropdown.open .nav-dropdown-btn {
+      color: var(--text)
+    }
+
+    .nav-dropdown-btn svg {
+      width: 11px;
+      height: 11px;
+      transition: transform .2s
+    }
+
+    .nav-dropdown.open .nav-dropdown-btn svg {
+      transform: rotate(180deg)
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: -16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .12);
+      padding: 8px;
+      min-width: 260px;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 300
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all
+    }
+
+    .nav-dropdown-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background .15s
+    }
+
+    .nav-dropdown-item:hover {
+      background: var(--bg2)
+    }
+
+    .ndi-icon {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .ndi-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text)
+    }
+
+    .ndi-sub {
+      font-size: 11.5px;
+      color: var(--text-2);
+      margin-top: 1px
+    }
+
+    .demo-hero {
+      padding: 36px 0 100px;
+      background: radial-gradient(ellipse 80% 60% at 30% 20%, #fff8f2, #fff)
+    }
+
+    .demo-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px
+    }
+
+    .demo-heading h1 {
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -2.5px;
+      line-height: 1.05;
+      color: var(--text);
+      margin: 0 0 10px
+    }
+
+    .demo-heading h1 em {
+      font-style: normal;
+      color: var(--accent)
+    }
+
+    .demo-heading p {
+      font-size: 15px;
+      color: var(--text-2)
+    }
+
+    .demo-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: start
+    }
+
+    .ba-frame {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 56px rgba(0, 0, 0, .14);
+      cursor: ew-resize;
+      user-select: none;
+      touch-action: none;
+      background: #f2f2f2
+    }
+
+    .ba-after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 1
+    }
+
+    .ba-before-wrap {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      overflow: hidden;
+      width: 50%;
+      background: #fff
+    }
+
+    .ba-before-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: var(--ba-frame-w, 100%);
+      max-width: none;
+      object-fit: cover
+    }
+
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      z-index: 3;
+      pointer-events: none
+    }
+
+    .ba-handle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1px;
+      width: 2px;
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .08)
+    }
+
+    .ba-grip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .25), 0 0 0 5px rgba(255, 255, 255, .35);
+      color: var(--accent);
+      animation: ba-pulse 2.2s ease-in-out infinite
+    }
+
+    @keyframes ba-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, .25), 0 0 0 5px rgba(255, 255, 255, .35)
+      }
+
+      50% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, .25), 0 0 0 9px rgba(255, 255, 255, 0)
+      }
+    }
+
+    .ba-frame.dragged .ba-grip {
+      animation: none
+    }
+
+    .ba-tag {
+      position: absolute;
+      top: 16px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 50px;
+      z-index: 4;
+      pointer-events: none
+    }
+
+    .ba-tag.before {
+      left: 16px;
+      background: rgba(0, 0, 0, .55);
+      color: #fff
+    }
+
+    .ba-tag.after {
+      right: 16px;
+      background: #fff;
+      color: var(--accent)
+    }
+
+    .ba-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 20px 20px 16px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, .75), transparent);
+      color: #fff;
+      font-size: 12.5px;
+      text-align: right;
+      z-index: 4;
+      pointer-events: none
+    }
+
+    .ba-float {
+      position: absolute;
+      left: -24px;
+      bottom: -22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+      max-width: 230px;
+      z-index: 5
+    }
+
+    .ba-float p {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 6px
+    }
+
+    .ba-float span {
+      font-size: 11px;
+      color: var(--text-3)
+    }
+
+    .ba-wrap {
+      position: relative;
+      padding-bottom: 34px
+    }
+
+    .ba-imgbox {
+      position: relative;
+      width: 100%;
+      max-width: 480px
+    }
+
+    .ba-nav {
+      position: absolute;
+      top: calc(50% - 17px);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 6;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+      transition: all .2s
+    }
+
+    .ba-nav:hover {
+      border-color: var(--accent);
+      color: var(--accent)
+    }
+
+    .ba-nav.prev {
+      left: -17px
+    }
+
+    .ba-nav.next {
+      right: -17px
+    }
+
+    @media(max-width:560px) {
+      .ba-nav.prev {
+        left: 8px
+      }
+
+      .ba-nav.next {
+        right: 8px
+      }
+    }
+
+    .ba-dots {
+      display: flex;
+      gap: 7px;
+      justify-content: center;
+      margin-top: 16px
+    }
+
+    .ba-dot {
+      width: 22px;
+      height: 4px;
+      border-radius: 4px;
+      border: none;
+      background: var(--border);
+      cursor: pointer;
+      padding: 0;
+      transition: background .3s
+    }
+
+    .ba-dot.active {
+      background: var(--accent)
+    }
+
+    .demo-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 44px
+    }
+
+    .demo-stats div {
+      display: flex;
+      align-items: baseline;
+      gap: 6px
+    }
+
+    .demo-stats strong {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -.5px
+    }
+
+    .demo-stats span {
+      font-size: 12px;
+      color: var(--text-2)
+    }
+
+    @media(max-width:900px) {
+      .ba-float {
+        left: 8px;
+        bottom: -30px;
+        max-width: none;
+        right: 8px
+      }
+    }
+
+    .demo-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, .08);
+      padding: 8px;
+      position: sticky;
+      top: 90px
+    }
+
+    .demo-card-head {
+      padding: 14px 26px 10px
+    }
+
+    .demo-card .sh-tag2 {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block
+    }
+
+    .demo-card h2 {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.3px
+    }
+
+    .demo-form {
+      padding: 20px 26px 26px
+    }
+
+    .demo-field {
+      margin-bottom: 16px
+    }
+
+    .demo-field label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px
+    }
+
+    .demo-field .req {
+      color: var(--accent);
+      margin-left: 2px
+    }
+
+    .demo-field input,
+    .demo-field select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      transition: border-color .2s;
+      outline: none
+    }
+
+    .demo-field input:focus,
+    .demo-field select:focus {
+      border-color: var(--accent)
+    }
+
+    .demo-field input.invalid,
+    .demo-field select.invalid {
+      border-color: #ef4444
+    }
+
+    .demo-field .err {
+      display: none;
+      font-size: 11.5px;
+      color: #ef4444;
+      margin-top: 5px
+    }
+
+    .demo-field.has-error .err {
+      display: block
+    }
+
+    .demo-submit {
+      width: 100%;
+      padding: 13px 0;
+      border-radius: 50px;
+      border: none;
+      background: linear-gradient(135deg, #F97316, #c2410c);
+      color: #fff;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px
+    }
+
+    .demo-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249, 115, 22, .45)
+    }
+
+    .demo-submit:disabled {
+      opacity: .6;
+      cursor: not-allowed
+    }
+
+    .demo-form-status {
+      display: none;
+      text-align: center;
+      padding: 40px 26px
+    }
+
+    .demo-form-status.show {
+      display: block
+    }
+
+    .demo-form-status svg {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 14px
+    }
+
+    .demo-form-status.success svg {
+      color: #16a34a
+    }
+
+    .demo-form-status.error svg {
+      color: #ef4444
+    }
+
+    .demo-form-status h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text)
+    }
+
+    .demo-form-status p {
+      font-size: 13.5px;
+      color: var(--text-2)
+    }
+
+    .demo-form-status button {
+      margin-top: 16px;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer
+    }
+
+    .demo-alt {
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--text-3);
+      padding: 16px 0 10px
+    }
+
+    .demo-alt a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    @media(max-width:900px) {
+      .demo-hero-grid {
+        grid-template-columns: 1fr
+      }
+
+      .demo-card {
+        position: static
+      }
+    }
+
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 32px 28px
+    }
+
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-2);
+      text-decoration: none
+    }
+
+    .footer-links a:hover {
+      color: var(--text)
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 14px;
+      align-items: center
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      opacity: .6;
+      transition: opacity .2s
+    }
+
+    .footer-social a:hover {
+      opacity: 1
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s
+    }
+
+    nav.nav-open .nav-toggle span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    nav.nav-open .nav-toggle span:nth-child(2) {
+      opacity: 0
+    }
+
+    nav.nav-open .nav-toggle span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    @media(max-width:860px) {
+      .nav-toggle {
+        display: flex
+      }
+
+      nav {
+        height: 62px;
+        overflow: hidden
+      }
+
+      nav.nav-open {
+        height: auto;
+        max-height: calc(100vh - 62px);
+        overflow-y: auto;
+        background: #fff;
+        backdrop-filter: none;
+        align-items: flex-start
+      }
+
+      nav.nav-open .nav-inner {
+        height: auto;
+        min-height: 62px
+      }
+
+      .nav-inner {
+        flex-wrap: wrap;
+        align-items: flex-start
+      }
+
+      .nav-toggle {
+        height: 62px;
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        flex-shrink: 0
+      }
+
+      .nav-logo {
+        height: 82px;
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        flex-shrink: 0;
+        overflow: hidden
+      }
+
+      .nav-logo img {
+        height: 80px !important
+      }
+
+      .nav-links,
+      .nav-cta-group {
+        flex-basis: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        opacity: 0;
+        transition: opacity .2s ease;
+      }
+
+      nav.nav-open .nav-links,
+      nav.nav-open .nav-cta-group {
+        opacity: 1
+      }
+
+      .nav-links {
+        padding-top: 8px;
+        order: 1
+      }
+
+      .nav-cta-group {
+        order: 2
+      }
+
+      .nav-links>a,
+      .nav-links>.nav-dropdown {
+        width: 100%
+      }
+
+      .nav-links>a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border)
+      }
+
+      .nav-dropdown-btn {
+        width: 100%;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border)
+      }
+
+      .nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        transform: none;
+        pointer-events: all;
+        box-shadow: none;
+        border: none;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 8px
+      }
+
+      .nav-dropdown.open .nav-dropdown-menu {
+        display: block
+      }
+
+      .nav-cta-group {
+        flex-direction: row;
+        gap: 10px;
+        padding: 4px 0 20px
+      }
+
+      .nav-cta-group>a {
+        flex: 1;
+        text-align: center;
+        padding: 10px 12px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <section class="demo-hero">
+    <div class="container">
+      <div class="demo-heading">
+        <h1>See it.  <em>Believe it.</em></h1>
+        <p id="baIntro">One flatlay in, a studio-grade catalog shot out. No photographer, no set, no waiting.</p>
+      </div>
+      <div class="demo-hero-grid">
+        <div class="demo-copy">
+          <div class="ba-wrap">
+            <div class="ba-imgbox">
+              <div class="ba-frame" id="baFrame">
+                <span class="ba-tag before" id="baTagBefore">Flatlay</span>
+                <span class="ba-tag after" id="baTagAfter">Nixi Output</span>
+                <img class="ba-after" id="baAfterImg" src="/assets/BookDemo/Demo_CatalogShoot_Output.webp"
+                  alt="AI-generated catalog shot">
+                <div class="ba-before-wrap" id="baBeforeWrap">
+                  <img id="baBeforeImg" src="/assets/BookDemo/Demo_CatalogShoot_Input.webp"
+                    alt="Original product flatlay">
+                </div>
+                <div class="ba-handle" id="baHandle">
+                  <div class="ba-grip">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                      style="width:16px;height:16px">
+                      <path d="M5 4L1 8l4 4M11 4l4 4-4 4" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ba-caption" id="baCaption">Same product. 90 seconds apart.</div>
+              </div>
+              <button class="ba-nav prev" id="baPrev" aria-label="Previous example">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                  style="width:14px;height:14px">
+                  <path d="M10 3L5 8l5 5" />
+                </svg>
+              </button>
+              <button class="ba-nav next" id="baNext" aria-label="Next example">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                  style="width:14px;height:14px">
+                  <path d="M6 3l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+            <div class="ba-dots">
+              <button class="ba-dot active" data-i="0" aria-label="Catalog Studio example"></button>
+              <button class="ba-dot" data-i="1" aria-label="Ads Studio example"></button>
+              <button class="ba-dot" data-i="2" aria-label="New Ad example"></button>
+            </div>
+            <div class="ba-float" id="baFloat">
+              <p>"Our catalog shoots are now 90% AI. Feels like magic."</p>
+              <span>Head of E-Commerce, DTC Fashion Brand</span>
+            </div>
+          </div>
+
+          <div class="demo-stats">
+            <div><strong>2.3x</strong><span>CTR</span></div>
+            <div><strong>90%</strong><span>faster</span></div>
+            <div><strong>70%</strong><span>lower cost</span></div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <span class="sh-tag2">Get your brand audited</span>
+            <h2>We'll recommend an action plan</h2>
+          </div>
+          <form class="demo-form" id="demoForm" novalidate>
+            <div class="demo-field" id="fieldName">
+              <label for="demoName">Name<span class="req">*</span></label>
+              <input type="text" id="demoName" name="name" autocomplete="name" required maxlength="120">
+              <div class="err">Please enter your name.</div>
+            </div>
+            <div class="demo-field" id="fieldEmail">
+              <label for="demoEmail">Email<span class="req">*</span></label>
+              <input type="email" id="demoEmail" name="email" autocomplete="email" required maxlength="255">
+              <div class="err">Please enter a valid email address.</div>
+            </div>
+            <div class="demo-field" id="fieldPhone">
+              <label for="demoPhone">Phone Number<span class="req">*</span></label>
+              <input type="tel" id="demoPhone" name="phone" autocomplete="tel" required maxlength="30">
+              <div class="err">Please enter a valid phone number.</div>
+            </div>
+            <div class="demo-field" id="fieldSource">
+              <label for="demoSource">Source<span class="req">*</span></label>
+              <select id="demoSource" name="source" required>
+                <option value="" disabled selected>How did you hear about us?</option>
+                <option value="Social">Social</option>
+                <option value="GoogleSearch">Google Search</option>
+                <option value="Referral">Referral</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="err">Please select a source.</div>
+            </div>
+            <div class="demo-field" id="fieldWebsite">
+              <label for="demoWebsite">Website Link <span style="color:var(--text-3);font-weight:400">(optional)</span></label>
+              <input type="text" id="demoWebsite" name="websiteUrl" autocomplete="url" placeholder="yourbrand.com" maxlength="500">
+            </div>
+            <button type="submit" class="demo-submit" id="demoSubmitBtn">Request a Demo</button>
+          </form>
+          <div class="demo-form-status" id="demoStatus">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path id="demoStatusIconPath" />
+            </svg>
+            <h3 id="demoStatusTitle"></h3>
+            <p id="demoStatusMsg"></p>
+            <button type="button" id="demoStatusRetry" style="display:none">Try again</button>
+          </div>
+          <div class="demo-alt">Prefer email? <a href="mailto:hello@nixiads.com">hello@nixiads.com</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const PAIRS = [
+        {
+          before: "/assets/BookDemo/Demo_CatalogShoot_Input.webp", after: "/assets/BookDemo/Demo_CatalogShoot_Output.webp",
+          beforeTag: "Flatlay", afterTag: "Nixi Output", caption: "Same product. 90 seconds apart.",
+          intro: "One flatlay in, a studio-grade catalog shot out. No photographer, no set, no waiting.",
+          quote: '"Our catalog shoots are now 90% AI. Feels like magic."', src: "Head of E-Commerce, DTC Fashion Brand"
+        },
+        {
+          before: "/assets/BookDemo/Demo_CloneAd_Input.webp", after: "/assets/BookDemo/Demo_CloneAd_Output.webp",
+          beforeTag: "Reference Ad", afterTag: "Nixi Output", caption: "Any ad's structure, rebuilt for your brand.",
+          intro: "One reference ad in, your on-brand version out. Same structure, your product.",
+          quote: '"We clone what’s already working instead of guessing from scratch."', src: "Growth Lead, D2C Brand"
+        },
+        {
+          before: "/assets/BookDemo/Demo_CreateAd_Input.webp", after: "/assets/BookDemo/Demo_CreateAd_Output.webp",
+          beforeTag: "Product Photo", afterTag: "Nixi Output", caption: "Upload a product, get a campaign-ready ad.",
+          intro: "Upload one product photo. Get a campaign-ready ad, no shoot required.",
+          quote: '"We stopped waiting on shoots to launch a new ad."', src: "Founder, Fashion D2C Brand"
+        }
+      ];
+      const frame = document.getElementById('baFrame'), handle = document.getElementById('baHandle'), beforeWrap = document.getElementById('baBeforeWrap');
+      const afterImg = document.getElementById('baAfterImg'), beforeImg = document.getElementById('baBeforeImg');
+      const tagBefore = document.getElementById('baTagBefore'), tagAfter = document.getElementById('baTagAfter');
+      const caption = document.getElementById('baCaption'), intro = document.getElementById('baIntro'), floatEl = document.getElementById('baFloat');
+      const dots = document.querySelectorAll('.ba-dot');
+      let dragging = false, idx = 0, timer;
+
+      function setPos(pct) {
+        pct = Math.max(0, Math.min(100, pct));
+        const frameW = frame.getBoundingClientRect().width;
+        beforeWrap.style.width = pct + '%';
+        beforeWrap.style.setProperty('--ba-frame-w', frameW + 'px');
+        handle.style.left = pct + '%';
+      }
+      function fromEvent(e) {
+        const rect = frame.getBoundingClientRect();
+        const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+        setPos(x / rect.width * 100);
+      }
+      function showPair(i) {
+        idx = i;
+        const p = PAIRS[i];
+        afterImg.src = p.after; beforeImg.src = p.before;
+        tagBefore.textContent = p.beforeTag; tagAfter.textContent = p.afterTag;
+        caption.textContent = p.caption; intro.textContent = p.intro;
+        floatEl.querySelector('p').textContent = p.quote; floatEl.querySelector('span').textContent = p.src;
+        dots.forEach((d, di) => d.classList.toggle('active', di === i));
+        setPos(50);
+      }
+      function restartTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => { if (!dragging) showPair((idx + 1) % PAIRS.length); }, 5000);
+      }
+      dots.forEach(d => d.addEventListener('click', () => { showPair(+d.dataset.i); restartTimer(); }));
+      document.getElementById('baPrev').addEventListener('click', e => { e.stopPropagation(); showPair((idx - 1 + PAIRS.length) % PAIRS.length); restartTimer(); });
+      document.getElementById('baNext').addEventListener('click', e => { e.stopPropagation(); showPair((idx + 1) % PAIRS.length); restartTimer(); });
+      frame.addEventListener('pointerdown', e => {
+        if (e.target.closest('.ba-nav')) return;
+        e.preventDefault();
+        dragging = true;
+        frame.classList.add('dragged');
+        try { frame.setPointerCapture(e.pointerId); } catch (err) { }
+        fromEvent(e);
+      });
+      frame.addEventListener('pointermove', e => { if (dragging) fromEvent(e); });
+      frame.addEventListener('pointerup', e => { dragging = false; try { frame.releasePointerCapture(e.pointerId); } catch (err) { } });
+      frame.addEventListener('pointercancel', () => { dragging = false; });
+      window.addEventListener('resize', () => setPos(parseFloat(handle.style.left) || 50));
+
+      showPair(0);
+      restartTimer();
+
+      function playHint() {
+        if (dragging || frame.classList.contains('dragged')) return;
+        beforeWrap.style.transition = handle.style.transition = 'left .5s ease, width .5s ease';
+        const steps = [38, 62, 44, 50];
+        let s = 0;
+        function nextStep() {
+          if (dragging || frame.classList.contains('dragged')) { beforeWrap.style.transition = handle.style.transition = ''; return; }
+          setPos(steps[s]);
+          s++;
+          if (s < steps.length) setTimeout(nextStep, 450);
+          else setTimeout(() => { beforeWrap.style.transition = handle.style.transition = ''; }, 450);
+        }
+        nextStep();
+      }
+      setTimeout(playHint, 900);
+      frame.addEventListener('pointerdown', () => { beforeWrap.style.transition = handle.style.transition = ''; });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const form = document.getElementById('demoForm');
+      const submitBtn = document.getElementById('demoSubmitBtn');
+      const statusEl = document.getElementById('demoStatus');
+      const statusTitle = document.getElementById('demoStatusTitle');
+      const statusMsg = document.getElementById('demoStatusMsg');
+      const statusRetry = document.getElementById('demoStatusRetry');
+      const iconPath = document.getElementById('demoStatusIconPath');
+
+      const PHONE_RE = /^[+\d][\d\s()-]{6,19}$/;
+
+      function setFieldError(fieldId, hasError) {
+        document.getElementById(fieldId).classList.toggle('has-error', hasError);
+      }
+
+      function validate(data) {
+        let valid = true;
+        if (!data.name) { setFieldError('fieldName', true); valid = false; } else setFieldError('fieldName', false);
+
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
+        if (!emailOk) { setFieldError('fieldEmail', true); valid = false; } else setFieldError('fieldEmail', false);
+
+        const phoneOk = PHONE_RE.test(data.phone.trim());
+        if (!phoneOk) { setFieldError('fieldPhone', true); valid = false; } else setFieldError('fieldPhone', false);
+
+        if (!data.source) { setFieldError('fieldSource', true); valid = false; } else setFieldError('fieldSource', false);
+
+        return valid;
+      }
+
+      function showStatus(kind, title, msg) {
+        form.style.display = 'none';
+        statusEl.classList.add('show');
+        statusEl.classList.toggle('success', kind === 'success');
+        statusEl.classList.toggle('error', kind === 'error');
+        statusTitle.textContent = title;
+        statusMsg.textContent = msg;
+        statusRetry.style.display = kind === 'error' ? 'inline-block' : 'none';
+        iconPath.setAttribute('d', kind === 'success' ? 'M8 12l3 3 5-6' : 'M12 8v5M12 16h.01');
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const data = {
+          name: document.getElementById('demoName').value.trim(),
+          email: document.getElementById('demoEmail').value.trim(),
+          phone: document.getElementById('demoPhone').value.trim(),
+          source: document.getElementById('demoSource').value,
+          websiteUrl: document.getElementById('demoWebsite').value.trim() || null,
+        };
+
+        if (!validate(data)) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+
+        try {
+          const res = await fetch('https://planecurves-creativeengine-production.up.railway.app/api/demo-requests', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          if (!res.ok) {
+            if (res.status === 429) {
+              throw new Error('Too many requests. Please wait a moment and try again.');
+            }
+            throw new Error('Something went wrong. Please try again or email us directly.');
+          }
+
+          showStatus('success', "You're all set!", "We've received your request and will reach out shortly to schedule your demo.");
+        } catch (err) {
+          showStatus('error', 'Submission failed', err.message || 'Please try again or email us directly.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request a Demo';
+        }
+      });
+
+      statusRetry.addEventListener('click', function () {
+        statusEl.classList.remove('show');
+        form.style.display = '';
+      });
+    })();
+  </script>
+
+  <div id="site-footer"></div>
+  <script src="/components/loader.js"></script>
+</body>
+
+</html>
